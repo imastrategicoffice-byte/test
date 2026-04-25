@@ -114,6 +114,24 @@
             font-size: 11px; 
             margin-top: 20px;
         }
+        /* 見出しが絶対にはみ出さない・崩れないための修正CSS */
+h1, .cta-label, .cta-text {
+    font-size: clamp(18px, 5vw, 24px) !important; /* 画面幅に合わせて伸縮 */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ＼ 〜 ／ のような装飾がバラバラにならないようにする */
+.cta-label, .cta-text, .cta-msg {
+    white-space: normal; /* 折り返しは許可するが */
+    display: inline-block; /* まとまりとして扱う */
+    padding: 0 10px;
+}
+
     </style>
 </head>
 <body>
