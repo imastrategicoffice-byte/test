@@ -2,180 +2,127 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【公式】Lyprimo（リプリモ）- 届いたその日から使えるプリペイド携帯</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Lyprimo（リプリモ） - 即日利用可能なプリペイド携帯</title>
     <style>
-        /* 全体の基本設定：スマホで端に文字がくっつかないよう余白を確保 */
+        /* --- 1. 基本設定：スマホとPCの表示を完全分離 --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* スマホ上部の白飛びを背景色で封鎖 */
+        html { background-color: #d11212; }
+        
         body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
-            line-height: 1.8; 
+            width: 100%; 
+            background-color: #f8f9fa; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
             color: #333; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #fcfcfc; 
-        }
-        .container { 
-            max-width: 600px; 
-            margin: 0 auto; 
-            background: #fff; 
-            padding-bottom: 40px;
-        }
-        header { 
-            background: #f39c12; 
-            color: #fff; 
-            padding: 15px; 
-            text-align: center; 
-            font-weight: bold; 
-            font-size: 14px; 
-        }
-        /* ヒーローエリア */
-        .hero { 
-            padding: 40px 20px; 
-            text-align: center; 
-            background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); 
-            color: white; 
-        }
-        .hero h1 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
             line-height: 1.4; 
         }
-        .hero p { 
-            font-size: 16px; 
-            opacity: 0.9; 
-            margin: 0;
+
+        .lp-container { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: auto; 
         }
-        /* メインコンテンツ */
-        .content { 
-            padding: 25px 15px; 
-        }
-        .section-title { 
-            font-size: 20px; 
-            border-left: 5px solid #f39c12; 
-            padding-left: 12px; 
-            margin-bottom: 25px; 
-            font-weight: bold; 
-            color: #333;
-        }
-        /* 特徴ボックス */
-        .feature-card { 
-            background: #fff; 
-            border: 1px solid #eee; 
-            padding: 20px; 
-            border-radius: 15px; 
-            margin-bottom: 20px; 
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-        .feature-card h2 { 
-            margin-top: 0; 
-            font-size: 18px; 
-            color: #e67e22; 
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-        .feature-card h2::before {
-            content: "✨";
-            margin-right: 8px;
-        }
-        .feature-card p { 
-            font-size: 16px; 
-            margin: 0; 
-            color: #555;
-        }
-        /* お知らせ・補足エリア */
-        .notice-box {
-            background: #fff9f0;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 20px;
-            font-size: 15px;
-            color: #7f8c8d;
-            border: 1px dashed #f39c12;
-        }
-        /* CTAエリア */
-        .cta-area { 
+
+        /* --- 2. ヘッダー：スマホの見切れを物理回避 --- */
+        header { 
+            background: linear-gradient(135deg, #d11212, #f03e3e); 
+            color: #fff; 
+            padding: calc(90px + env(safe-area-inset-top)) 10px 40px; 
             text-align: center; 
-            padding: 40px 20px; 
-            background: #fff5e6; 
-            border-radius: 20px;
-            margin: 20px 15px;
         }
+
+        header h1 { 
+            font-size: clamp(0.5rem, 5.5vw, 1.4rem); 
+            font-weight: bold; 
+            white-space: nowrap; 
+            line-height: 1.2;
+        }
+
+        /* --- 3. コンテンツ：PCでのスカスカ感を解消 --- */
+        .content { 
+            padding: 20px 20px 10px; 
+        }
+
+        .headline { 
+            background: #fff0f0; color: #d11212; font-weight: bold; 
+            padding: 10px; text-align: center; border-bottom: 3px solid #d11212; 
+            margin-bottom: 20px;
+            font-size: clamp(0.5rem, 5vw, 1.1rem); white-space: nowrap; 
+        }
+
+        .card { 
+            background: #fafafa; border: 1px solid #eee; border-radius: 8px; 
+            padding: 15px; margin-bottom: 15px; 
+            border-left: 5px solid #d11212; 
+        }
+        .card b { color: #d11212; display: block; margin-bottom: 4px; font-size: 0.95rem; }
+        .card p { font-size: 0.85rem; color: #555; }
+
+        /* --- 4. CTA：バナー位置の適正化 --- */
+        .cta-section { 
+            background: #fff; 
+            text-align: center; 
+            padding: 20px 10px 30px; 
+            border-top: 1px solid #eee; 
+            margin-top: 0; 
+        }
+
+        .cta-label { 
+            font-weight: bold; color: #333; margin-bottom: 15px; display: inline-block; 
+            font-size: clamp(0.5rem, 5.5vw, 1.05rem); white-space: nowrap; 
+        }
+
         .ad-container { 
-            margin: 20px 0; 
+            width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; font-size: 0; 
         }
         .ad-container img { 
-            max-width: 100% !important; 
-            height: auto !important; 
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            width: 100% !important; height: auto !important; 
+            display: block !important; border: none; 
         }
-        .cta-text {
-            font-weight: bold;
-            font-size: 18px;
-            color: #d35400;
-            margin-bottom: 15px;
-        }
-        /* フッター */
+
+        /* --- 5. フッター --- */
         footer { 
-            background: #f2f2f2; 
-            color: #888; 
-            text-align: center; 
-            padding: 30px 20px; 
-            font-size: 11px; 
+            background: #333; color: #fff; 
+            padding: 15px 20px calc(25px + env(safe-area-inset-bottom)); 
+            font-size: 0.7rem; line-height: 1.6; 
         }
+        .footer-line1 { text-align: left; display: block; }
+        .footer-line2 { text-align: right; display: block; opacity: 0.7; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>即日利用可能なプリペイドスマホ「Lyprimo」</header>
-
-    <section class="hero">
-        <h1>審査・契約手続き一切不要！<br>届いたらすぐに使えます</h1>
-        <p>クレカ・銀行口座がなくても本人名義で安心</p>
-    </section>
-
+<div class="lp-container">
+    <header>
+        <h1>Lyprimo（リプリモ） - 即日利用可能なプリペイド携帯</h1>
+    </header>
     <div class="content">
-        <div class="section-title">リプリモが選ばれる理由</div>
-        
-        <div class="feature-card">
-            <h2>驚きのスピードと手軽さ</h2>
-            <p>購入して手元に届いたら即日利用可能。面倒な契約手続きや審査は一切ございません。</p>
+        <div class="headline">銀行口座・クレジットカード不要で契約可能</div>
+        <div class="card">
+            <b>審査不要・身分証のみで契約</b>
+            <p>お手元に届いたら即日利用可能。契約手続きや銀行口座、クレジットカードは一切不要です。</p>
         </div>
-
-        <div class="feature-card">
-            <h2>口座・カード不要で安心</h2>
-            <p>銀行口座やクレジットカードをお持ちでない方も問題ありません。どなたでも自分専用のスマホが持てます。</p>
-        </div>
-
-        <div class="feature-card">
-            <h2>国内通話かけ放題付き</h2>
-            <p>通話料を気にせずたっぷり電話が楽しめます。最新機種の取り扱いもあり、延長利用も可能です。</p>
-        </div>
-
-        <div class="notice-box">
-            <p>※ご自宅への郵送物などは一切ありませんので、プライバシーも守られます。<br>※18歳未満の方は保護者様の同意書が必要となります。</p>
+        <div class="card">
+            <b>国内通話かけ放題付き</b>
+            <p>通話料を気にせず利用可能。コンビニ決済対応で、使いたい期間ずーっと延長利用が可能です。</p>
         </div>
     </div>
-
-    <section class="cta-area">
-        <div class="cta-text">＼ 今すぐ最新機種をチェック ／</div>
-        
+    <div class="cta-section">
+        <span class="cta-label">＼ 公式サイトでお申し込みはこちら ／</span>
         <div class="ad-container">
             <a href="https://px.a8.net/svt/ejp?a8mat=4AVBW3+5WJRQQ+529Y+5ZMCH" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www25.a8.net/svt/bgt?aid=260122611357&wid=001&eno=01&mid=s00000023623001006000&mc=1"></a>
-            <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4AVBW3+5WJRQQ+529Y+5ZMCH" alt="">
+            <img border="0" width="300" height="250" alt="" src="https://www23.a8.net/svt/bgt?aid=260122611357&wid=001&eno=01&mid=s00000023623001006000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AVBW3+5WJRQQ+529Y+5ZMCH" alt="">
         </div>
-
-        <p style="font-size: 13px; color: #95a5a6;">バナーをタップして公式サイトへ移動します</p>
-    </section>
-
+    </div>
     <footer>
-        <p>※本ページはプロモーションを含みます。</p>
-        <p>Copyright © 2026 Lyprimo案内ページ All Rights Reserved.</p>
+        <span class="footer-line1">※本ページはプロモーションを含みます。</span>
+        <span class="footer-line2">&copy; 2026 Lyprimo 契約ガイド</span>
     </footer>
 </div>
-
 </body>
 </html>
