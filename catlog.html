@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Catlog - 猫様の生活をテクノロジーで見守る</title>
     <style>
-        /* --- 人間工学・物理的見切れ根絶スペック --- */
+        /* --- 人間工学・オーガニックカラー最適化スペック --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* html背景色をヘッダー最上部と同期 */
-        html { background-color: #2c2c2c; overflow-x: hidden; }
+        /* html背景色をヘッダーの柔らかいベージュと同期 */
+        html { background-color: #f6efe6; overflow-x: hidden; }
         
         body { 
             width: 100%; 
-            background-color: #f4f7f4; 
+            background-color: #fcfbf9; /* 目に優しいミルク色 */
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
-            color: #333; 
+            color: #4a4a4a; /* 黒すぎない優しいグレー */
             line-height: 1.6; 
             overflow-x: hidden;
         }
@@ -25,17 +25,17 @@
             max-width: 500px; 
             margin: 0 auto; 
             background: #ffffff; 
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(139, 87, 42, 0.1); /* 影にも温かみを */
             min-height: auto;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* ヘッダー：テクノロジーと温かみを感じるダークグラデーション */
+        /* ヘッダー：猫様の体温を感じさせるミルクティーグラデーション */
         header { 
-            background: linear-gradient(180deg, #2c2c2c 0%, #4a4a4a 100%); 
-            color: #fff; 
+            background: linear-gradient(180deg, #f6efe6 0%, #eaddcf 100%); 
+            color: #6b4f35; /* 深みのあるブラウン */
             padding: calc(100px + env(safe-area-inset-top)) 20px 60px; 
             text-align: center; 
             clip-path: ellipse(150% 100% at 50% 0%); 
@@ -44,32 +44,32 @@
         header .brand-label {
             font-size: 0.85rem;
             letter-spacing: 0.1rem;
-            opacity: 0.8;
+            opacity: 0.9;
             margin-bottom: 12px;
             display: block;
             font-weight: bold;
         }
 
         header h1 { 
+            /* 全テキスト改行最適化 */
             font-size: clamp(1.2rem, 6vw, 1.7rem); 
             font-weight: bold; 
             line-height: 1.4;
             word-break: break-word;
             overflow-wrap: anywhere;
             line-break: strict;
-            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
         .content { padding: 40px 20px 10px; }
 
         /* 視覚的リズムを作る強調ヘッドライン */
         .headline { 
-            background: #fdfaf5; 
-            color: #8b572a; 
+            background: #fff; 
+            color: #a07855; /* 柔らかなブラウン */
             font-weight: bold; 
             padding: 15px; 
             text-align: center; 
-            border: 2px solid #8b572a; 
+            border: 2px solid #eaddcf; 
             border-radius: 12px; 
             margin-bottom: 35px;
             font-size: clamp(0.9rem, 4.5vw, 1.1rem);
@@ -78,18 +78,18 @@
             line-break: strict;
         }
 
-        /* カードデザイン：左アクセントボーダーによる視覚誘導 */
+        /* カードデザイン：左アクセントボーダー（モカブラウン）による視覚誘導 */
         .card { 
             background: #ffffff; 
-            border: 1px solid #eaeaea; 
+            border: 1px solid #f2ede4; 
             border-radius: 15px; 
             padding: 22px; 
             margin-bottom: 20px; 
-            border-left: 8px solid #8b572a; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-left: 8px solid #d9cdc1; 
+            box-shadow: 0 5px 15px rgba(139, 87, 42, 0.03);
         }
         .card b { 
-            color: #1a1a1a; 
+            color: #333; 
             display: block; 
             margin-bottom: 8px; 
             font-size: 1.1rem; 
@@ -99,16 +99,17 @@
         }
         .card p { 
             font-size: 0.95rem; 
-            color: #555; 
+            color: #666; 
             word-break: break-word;
             overflow-wrap: anywhere;
             line-break: strict;
         }
-        .highlight { color: #d0021b; font-weight: bold; }
+        /* 生き物の広告のため、赤色の強調を避け、テラコッタ系の優しい暖色に */
+        .highlight { color: #c37841; font-weight: bold; }
 
         /* CTAセクション */
         .cta-section { 
-            background: #fafafa; 
+            background: #fdfcfb; 
             text-align: center; 
             padding: 40px 15px 60px; 
             border-top: 1px solid #eee; 
@@ -116,7 +117,7 @@
 
         .cta-label { 
             font-weight: bold; 
-            color: #333; 
+            color: #4a4a4a; 
             margin-bottom: 25px; 
             display: inline-block; 
             font-size: clamp(1rem, 5vw, 1.2rem);
@@ -128,7 +129,7 @@
         .arrow-anim {
             display: block;
             font-size: 1.6rem;
-            color: #8b572a;
+            color: #d9cdc1;
             margin-bottom: 10px;
             animation: bounce 1s infinite;
         }
@@ -143,13 +144,13 @@
             max-width: 300px; 
             margin: 0 auto; 
             line-height: 0; 
-            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15)); 
+            filter: drop-shadow(0 12px 24px rgba(139, 87, 42, 0.1)); 
         }
         .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; border-radius: 10px; }
 
         .note {
             font-size: 0.75rem;
-            color: #888;
+            color: #999;
             padding: 25px 20px;
             background: #fff;
             line-height: 1.5;
@@ -159,12 +160,12 @@
         }
 
         footer { 
-            background: #2c2c2c; 
-            color: #fff; 
+            background: #6b4f35; /* ヘッダーの文字色と合わせて統一感を */
+            color: #f6efe6; 
             padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); 
             font-size: 0.75rem; 
         }
-        .footer-line1 { opacity: 0.7; margin-bottom: 10px; display: block; }
+        .footer-line1 { opacity: 0.8; margin-bottom: 10px; display: block; }
         .footer-line2 { font-weight: bold; text-align: right; display: block; }
     </style>
 </head>
