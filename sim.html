@@ -2,159 +2,57 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>【公式】だれでもモバイル - 審査不要の本人名義スマホ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>だれでもモバイル - 審査不要の音声SIM</title>
     <style>
-        /* --- リセットと基本設定 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { width: 100%; background-color: #f4f7f9; overflow-x: hidden; }
-
-        body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
-            color: #333; line-height: 1.6;
-        }
-
-        .lp-container { 
-            max-width: 500px; 
-            margin: 0 auto; 
-            background: #ffffff; 
-            box-shadow: 0 0 20px rgba(0,0,0,0.1);
-        }
-
-        /* --- ヒーローエリア --- */
-        header { 
-            background: linear-gradient(135deg, #005bac, #0076e4);
-            color: #fff; padding: 30px 15px; text-align: center;
-        }
-
-        header h1 { 
-            /* スマホ1行死守 */
-            font-size: clamp(1rem, 6.2vw, 1.6rem); 
-            font-weight: bold;
-            white-space: nowrap;
-        }
-
-        /* --- コンテンツエリア --- */
-        .content { padding: 25px 20px; }
-
-        .headline {
-            background: #fff4f4;
-            color: #e60012;
-            font-weight: bold;
-            padding: 12px;
-            text-align: center;
-            border-bottom: 3px solid #e60012;
-            margin-bottom: 25px;
-            /* スマホ1行死守 */
-            font-size: clamp(0.9rem, 5.5vw, 1.15rem);
-            white-space: nowrap;
-        }
-
-        .check-list { margin-bottom: 25px; }
-        .check-item { 
-            position: relative; padding-left: 30px; margin-bottom: 12px; 
-            font-size: 0.95rem; font-weight: bold; color: #005bac;
-        }
-        .check-item::before {
-            content: '✔'; position: absolute; left: 0; color: #e60012; font-size: 1.2rem;
-        }
-
-        .card { 
-            background: #f9f9f9; border: 1px solid #eee; border-radius: 12px; 
-            padding: 18px; margin-bottom: 20px; 
-            border-left: 5px solid #005bac;
-        }
-
-        .card b { color: #005bac; display: block; margin-bottom: 8px; font-size: 1.05rem; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: #333; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        .lp-container { width: 100%; max-width: 500px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.1); flex-grow: 1; display: flex; flex-direction: column; }
+        header { background: linear-gradient(135deg, #005bac, #0076e4); color: #fff; padding: calc(40px + env(safe-area-inset-top)) 15px 30px; text-align: center; }
+        header h1 { font-size: clamp(0.5rem, 6vw, 1.5rem); font-weight: bold; white-space: nowrap; }
+        .content { padding: 25px 20px; flex-grow: 1; }
+        .headline { background: #fff4f4; color: #e60012; font-weight: bold; padding: 12px; text-align: center; border-bottom: 3px solid #e60012; margin-bottom: 25px; font-size: clamp(0.5rem, 5.2vw, 1.1rem); white-space: nowrap; }
+        .card { background: #f9f9f9; border: 1px solid #eee; border-radius: 12px; padding: 18px; margin-bottom: 20px; border-left: 5px solid #005bac; }
+        .card b { color: #005bac; display: block; margin-bottom: 8px; font-size: 1rem; }
         .card p { font-size: 0.85rem; color: #555; }
-
-        /* --- 広告エリア：物理固定 --- */
-        .cta-section { 
-            background: #fdfdfd; 
-            text-align: center; 
-            padding: 30px 10px;
-            border-top: 1px solid #eee;
-        }
-
-        .cta-label { 
-            font-weight: bold; color: #333; 
-            margin-bottom: 15px; display: inline-block; 
-            /* スマホ1行死守 */
-            font-size: clamp(0.95rem, 5.5vw, 1.2rem);
-            white-space: nowrap;
-        }
-
-        .ad-container { 
-            width: 100%; max-width: 300px; margin: 0 auto;
-            line-height: 0; font-size: 0; position: relative;
-        }
-
-        .ad-container a { display: block; line-height: 0; }
-
-        .ad-container img { 
-            width: 100% !important; height: auto !important; 
-            display: block !important; border: none;
-        }
-
-        .tracking-pixel {
-            position: absolute; width: 1px; height: 1px;
-            opacity: 0; pointer-events: none;
-        }
-
-        /* --- フッター：2段構成（見切れ封鎖） --- */
-        footer { 
-            background: #333; color: #fff; 
-            padding: 15px 20px; 
-            font-size: 0.75rem;
-            line-height: 1.8;
-        }
-
+        .cta-section { background: #fdfdfd; text-align: center; padding: 30px 10px 40px; border-top: 1px solid #eee; }
+        .cta-label { font-weight: bold; color: #333; margin-bottom: 15px; display: inline-block; font-size: clamp(0.5rem, 5.5vw, 1.1rem); white-space: nowrap; }
+        .ad-container { width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; font-size: 0; position: relative; }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; }
+        footer { background: #333; color: #fff; padding: 20px 20px calc(30px + env(safe-area-inset-bottom)); font-size: 0.75rem; line-height: 1.8; margin-top: auto; }
         .footer-line1 { text-align: left; display: block; }
         .footer-line2 { text-align: right; display: block; opacity: 0.8; }
     </style>
 </head>
 <body>
-
 <div class="lp-container">
     <header>
-        <h1>審査不要！本人名義でスマホが持てる。<br>だれでもモバイルで安心の生活を。</h1>
+        <h1>審査不要！本人名義でスマホが持てる</h1>
     </header>
-
     <div class="content">
-        <div class="headline">身分証と銀行口座だけで契約完了！</div>
-
-        <div class="check-list">
-            <div class="check-item">クレジットカード不要</div>
-            <div class="check-item">全プランかけ放題付き</div>
-            <div class="check-item">安心のドコモ回線を利用</div>
-        </div>
-
+        <div class="headline">身分証と銀行口座があれば契約可能</div>
         <div class="card">
-            <b>レンタルスマホより断然お得</b>
-            <p>高額なレンタル料金を払う必要はありません。月々の支払いを抑えて、自分名義のスマホが持てます。</p>
+            <b>だれでもモバイルとは？</b>
+            <p>審査不要の音声SIMだから、大手キャリアで契約できなかった方でも本人名義でスマホが持てます。</p>
         </div>
-
         <div class="card">
-            <b>生活に不可欠な連絡手段を</b>
-            <p>就職活動や住居の契約など、現代社会でスマホは必須。諦めていた方も、今すぐお申し込みいただけます。</p>
+            <b>大手キャリアで契約ができない方へ</b>
+            <p>身分証と銀行口座さえあれば審査不要。レンタルスマホより低料金で、全プランかけ放題付きです。</p>
         </div>
     </div>
-
     <div class="cta-section">
-        <span class="cta-label">＼ 最短でお届け！お申し込みはこちら ／</span>
+        <span class="cta-label">＼ 公式サイトでお申し込みはこちら ／</span>
         <div class="ad-container">
             <a href="https://px.a8.net/svt/ejp?a8mat=4AVBW3+5X584A+4G6O+1TK94X" rel="nofollow">
-                <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=260122611358&wid=002&eno=01&mid=s00000020760011012000&mc=1">
-            </a>
-            <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AVBW3+5X584A+4G6O+1TK94X" class="tracking-pixel" alt="">
+            <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=260122611358&wid=002&eno=01&mid=s00000020760011012000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AVBW3+5X584A+4G6O+1TK94X" alt="">
         </div>
     </div>
-
     <footer>
         <span class="footer-line1">※本ページはプロモーションを含みます。</span>
-        <span class="footer-line2">&copy; 2026 だれでもモバイル 契約ガイド by IMA</span>
+        <span class="footer-line2">&copy; 2026 だれでもモバイル 契約ガイド</span>
     </footer>
 </div>
-
 </body>
 </html>
