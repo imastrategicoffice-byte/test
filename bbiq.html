@@ -2,127 +2,221 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BBIQ（ビビック）特設ページ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>BBIQ九州の光インターネット - 最大30,000円キャッシュバック</title>
     <style>
-        /* --- 徹底的な余白の排除 --- */
+        /* --- 人間工学・物理的見切れ根絶スペック --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; background-color: #f0f4f8; overflow-x: hidden; }
-
+        
+        /* html背景色をヘッダー最上部と同期 */
+        html { background-color: #004da1; overflow-x: hidden; }
+        
         body { 
-            font-family: sans-serif; 
-            background-image: repeating-linear-gradient(45deg, #e6edf5, #e6edf5 10px, #f0f4f8 10px, #f0f4f8 20px);
+            width: 100%; 
+            background-color: #f4f7f4; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
+            color: #333; 
+            line-height: 1.6; 
+            overflow-x: hidden;
         }
 
         .lp-container { 
+            width: 100%; 
             max-width: 500px; 
             margin: 0 auto; 
             background: #ffffff; 
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            min-height: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
+        /* ヘッダー：BBIQの信頼感を象徴するブルーグラデーション */
         header { 
-            background: linear-gradient(135deg, #0052cc, #003399);
-            color: #fff; padding: 30px 15px; text-align: center;
-        }
-
-        header h1 { font-size: clamp(1.1rem, 6vw, 1.5rem); line-height: 1.4; }
-
-        .content { padding: 20px 15px; }
-
-        .card { 
-            background: #fff; border: 1px solid #ddd; border-radius: 8px; 
-            padding: 15px; margin-bottom: 15px; border-left: 5px solid #0052cc;
-        }
-
-        .card b { color: #0052cc; display: block; margin-bottom: 5px; font-size: 1rem; }
-        .card p { font-size: 0.9rem; color: #555; }
-
-        .price-box {
-            display: flex; justify-content: space-between; gap: 10px;
-        }
-
-        .p-item { 
-            flex: 1; background: #f8fbff; border: 1px solid #0052cc; 
-            padding: 10px; border-radius: 5px; text-align: center; font-size: 0.75rem;
-        }
-
-        .p-item span { font-size: 1.1rem; color: #e60000; font-weight: bold; }
-
-        /* --- 広告エリア：トラッキングコードの無効化 --- */
-        .cta-section { 
-            background: #fff8f0; 
+            background: linear-gradient(180deg, #004da1 0%, #0072bc 100%); 
+            color: #fff; 
+            padding: calc(100px + env(safe-area-inset-top)) 20px 60px; 
             text-align: center; 
-            border-top: 2px solid #ff8c00;
-            padding-top: 20px;
-            padding-bottom: 0;
+            clip-path: ellipse(150% 100% at 50% 0%); 
         }
 
-        .cta-label { font-weight: bold; color: #d35400; margin-bottom: 15px; display: block; font-size: 0.95rem; }
+        header .brand-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: bold;
+        }
+
+        header h1 { 
+            /* 全テキスト改行最適化 */
+            font-size: clamp(1.2rem, 6vw, 1.7rem); 
+            font-weight: bold; 
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .content { padding: 40px 20px 10px; }
+
+        /* 視覚的リズムを作る強調ヘッドライン */
+        .headline { 
+            background: #fff; 
+            color: #004da1; 
+            font-weight: bold; 
+            padding: 15px; 
+            text-align: center; 
+            border: 2px solid #004da1; 
+            border-radius: 12px; 
+            margin-bottom: 35px;
+            font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        /* カードデザイン：左アクセントボーダーによる視覚誘導 */
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #eaeaea; 
+            border-radius: 15px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+            border-left: 8px solid #004da1; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .card b { 
+            color: #1a1a1a; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 1.1rem; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .card p { 
+            font-size: 0.95rem; 
+            color: #555; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .highlight { color: #d0021b; font-weight: bold; }
+
+        /* CTAセクション */
+        .cta-section { 
+            background: #fafafa; 
+            text-align: center; 
+            padding: 40px 15px 60px; 
+            border-top: 1px solid #eee; 
+        }
+
+        .cta-label { 
+            font-weight: bold; 
+            color: #333; 
+            margin-bottom: 25px; 
+            display: inline-block; 
+            font-size: clamp(1rem, 5vw, 1.2rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        
+        .arrow-anim {
+            display: block;
+            font-size: 1.6rem;
+            color: #004da1;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
 
         .ad-container { 
-            width: 100%; max-width: 300px; margin: 0 auto;
-            line-height: 0; font-size: 0; position: relative;
+            width: 100%; 
+            max-width: 300px; 
+            margin: 0 auto; 
+            line-height: 0; 
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15)); 
         }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; border-radius: 10px; }
 
-        .ad-container a { display: block; line-height: 0; margin: 0; padding: 0; }
-
-        .ad-container img { 
-            width: 100%; height: auto; display: block; border: none;
-        }
-
-        /* 1x1トラッキング画像をデザインから完全に隔離する設定 */
-        .tracking-pixel {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            opacity: 0;
-            pointer-events: none;
+        .note {
+            font-size: 0.75rem;
+            color: #888;
+            padding: 25px 20px;
+            background: #fff;
+            line-height: 1.5;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
         }
 
         footer { 
-            background: #eee; color: #777; text-align: center; 
-            padding: 15px 10px; font-size: 0.7rem; line-height: 1.5;
+            background: #004da1; 
+            color: #fff; 
+            padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); 
+            font-size: 0.75rem; 
         }
+        .footer-line1 { opacity: 0.7; margin-bottom: 10px; display: block; }
+        .footer-line2 { font-weight: bold; text-align: right; display: block; }
     </style>
 </head>
 <body>
-
 <div class="lp-container">
     <header>
-        <h1>九州にお住まいならBBIQ！<br>最大30,000円還元実施中</h1>
+        <span class="brand-label">九州の光インターネットならBBIQ</span>
+        <h1>当サイト限定！<br>最大30,000円キャッシュバック</h1>
     </header>
-
     <div class="content">
+        <div class="headline">九州電力・auユーザーはさらにおトク！</div>
+        
         <div class="card">
-            <b>最大30,000円還元</b>
-            <p>当サイト限定！高額キャッシュバックでおトクに開始。</p>
+            <b>圧倒的な還元！<span class="highlight">最大30,000円</span></b>
+            <p>当サイトからのお申込みでキャッシュバック！おトクに高速インターネットを開始したい方に最適です。</p>
         </div>
+
         <div class="card">
-            <b>au・九電セット割</b>
-            <p>毎月の電気代やスマホ代も安くなる九州の定番ネット回線。</p>
+            <b>auスマホとセットで<span class="highlight">永年割引</span></b>
+            <p>auスマートバリュー対応。BBIQとセットで、お使いのauスマホやタブレットのご利用料金が毎月おトクになります。</p>
         </div>
-        <div class="price-box">
-            <div class="p-item">マンション<br><span>3,300円〜</span></div>
-            <div class="p-item">戸建住宅<br><span>4,070円〜</span></div>
+
+        <div class="card">
+            <b>九州電力ユーザーなら<span class="highlight">セット割♪</span></b>
+            <p>九電ユーザーならBBIQの月額料金がさらに安く。九州にお住まいの方に選ばれる理由がここにあります。</p>
+        </div>
+
+        <div class="card">
+            <b>納得の低価格！<span class="highlight">月額3,300円〜</span></b>
+            <p>集合住宅は3,300円（税込）〜、戸建住宅は4,070円（税込）〜。プロバイダー料込の明快な料金体系です。</p>
         </div>
     </div>
 
     <div class="cta-section">
-        <span class="cta-label">＼ キャンペーン詳細はこちら ／</span>
+        <span class="cta-label">＼ 九州で高速光回線を始める ／</span>
+        <span class="arrow-anim">▼</span>
         <div class="ad-container">
             <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EJXH4I+42Y0+NWC81" rel="nofollow">
-                <img src="https://www24.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1" alt="BBIQ広告">
-            </a>
-            <img src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" class="tracking-pixel" alt="">
+            <img border="0" width="300" height="250" alt="BBIQ 公式" src="https://www21.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" alt="">
         </div>
     </div>
 
+    <div class="note">
+        ※キャッシュバックや割引の適用には条件があります。高速インターネットで動画や大容量ダウンロードも快適。詳細や条件は公式サイトをご確認ください。
+    </div>
+
     <footer>
-        ※本ページはプロモーションを含みます。<br>
-        &copy; 2026 九州インターネット回線比較ガイド
+        <span class="footer-line1">※本ページはプロモーションを含みます。</span>
+        <span class="footer-line2">&copy; 2026 BBIQ 九州・光回線戦略ガイド</span>
     </footer>
 </div>
-
 </body>
 </html>
