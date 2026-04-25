@@ -2,72 +2,236 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【公式】ドッグカメラ - 離れていても、いつでも愛犬のそばに。</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Furboドッグカメラ - 360°ビューでお留守番を安心に</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #fffaf0; }
-        .container { max-width: 600px; margin: 0 auto; background: #fff; box-shadow: 0 0 15px rgba(0,0,0,0.05); }
-        header { background: #ff9900; color: #fff; padding: 15px; text-align: center; font-size: 14px; font-weight: bold; }
-        .hero { padding: 40px 20px; text-align: center; background: #fff; }
-        .hero h2 { font-size: 22px; color: #d35400; margin-bottom: 10px; line-height: 1.4; }
-        .hero p { font-size: 16px; color: #555; }
-        .content { padding: 30px 20px; }
-        .section-title { font-size: 19px; border-bottom: 3px solid #ff9900; padding-bottom: 5px; margin-bottom: 20px; font-weight: bold; color: #333; }
-        .point-box { background: #fff; border: 2px solid #ffe4b5; padding: 15px; border-radius: 12px; margin-bottom: 20px; }
-        .point-box h3 { margin-top: 0; font-size: 17px; color: #e67e22; }
-        .cta-area { text-align: center; padding: 40px 20px; background: #fff7e6; border-top: 1px dashed #ff9900; }
-        /* バナー画像を確実に表示させるための設定 */
-        .ad-container { margin: 20px 0; min-height: 250px; display: flex; justify-content: center; align-items: center; flex-direction: column; }
-        .ad-container img { max-width: 100% !important; height: auto !important; border: none; }
-        footer { background: #444; color: #fff; text-align: center; padding: 20px; font-size: 11px; }
+        /* --- 人間工学・物理的見切れ根絶スペック --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* html背景色をヘッダー最上部と同期 */
+        html { background-color: #f7f7f7; overflow-x: hidden; }
+        
+        body { 
+            width: 100%; 
+            background-color: #f4f7f4; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
+            color: #333; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+
+        .lp-container { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            min-height: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ヘッダー：インテリアに馴染む清潔感のあるグラデーション */
+        header { 
+            background: linear-gradient(180deg, #f7f7f7 0%, #e8e8e8 100%); 
+            color: #444; 
+            padding: calc(100px + env(safe-area-inset-top)) 20px 60px; 
+            text-align: center; 
+            clip-path: ellipse(150% 100% at 50% 0%); 
+        }
+
+        header .brand-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            color: #888;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: bold;
+        }
+
+        header h1 { 
+            font-size: clamp(1.2rem, 6vw, 1.7rem); 
+            font-weight: bold; 
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        .content { padding: 40px 20px 10px; }
+
+        /* 視覚的リズムを作る強調ヘッドライン */
+        .headline { 
+            background: #fff; 
+            color: #d2a679; /* ウッド調の落ち着いた色味 */
+            font-weight: bold; 
+            padding: 15px; 
+            text-align: center; 
+            border: 2px solid #d2a679; 
+            border-radius: 12px; 
+            margin-bottom: 35px;
+            font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        /* クーポンエリア：衝動を動かすハイライト */
+        .coupon-box {
+            background: #fff0f0;
+            border: 2px dashed #d0021b;
+            padding: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 8px;
+        }
+        .coupon-text { font-size: 0.9rem; color: #333; margin-bottom: 5px; }
+        .coupon-code { font-size: 1.5rem; font-weight: bold; color: #d0021b; letter-spacing: 2px; }
+
+        /* カードデザイン */
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #eaeaea; 
+            border-radius: 15px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+            border-left: 8px solid #d2a679; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .card b { 
+            color: #1a1a1a; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 1.1rem; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .card p { 
+            font-size: 0.95rem; 
+            color: #555; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .highlight { color: #d0021b; font-weight: bold; }
+
+        /* CTAセクション */
+        .cta-section { 
+            background: #fafafa; 
+            text-align: center; 
+            padding: 40px 15px 60px; 
+            border-top: 1px solid #eee; 
+        }
+
+        .cta-label { 
+            font-weight: bold; 
+            color: #333; 
+            margin-bottom: 25px; 
+            display: inline-block; 
+            font-size: clamp(1rem, 5vw, 1.2rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        
+        .arrow-anim {
+            display: block;
+            font-size: 1.6rem;
+            color: #d2a679;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .ad-container { 
+            width: 100%; 
+            max-width: 300px; 
+            margin: 0 auto; 
+            line-height: 0; 
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15)); 
+        }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; border-radius: 10px; }
+
+        .note {
+            font-size: 0.75rem;
+            color: #888;
+            padding: 25px 20px;
+            background: #fff;
+            line-height: 1.5;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        footer { 
+            background: #333; 
+            color: #fff; 
+            padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); 
+            font-size: 0.75rem; 
+        }
+        .footer-line1 { opacity: 0.7; margin-bottom: 10px; display: block; }
+        .footer-line2 { font-weight: bold; text-align: right; display: block; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>お留守番中の「寂しい」を「安心」に変える。</header>
-
-    <section class="hero">
-        <h2>仕事中も、買い物中も。<br>スマホで愛犬とつながる幸せ。</h2>
-        <p>高画質カメラ ＋ 双方向会話 ＋ おやつ飛び出し機能</p>
-    </section>
-
+<div class="lp-container">
+    <header>
+        <span class="brand-label">世界133ヶ国で愛用されるドッグカメラ</span>
+        <h1>360°見守る、話せる、おやつが出る。<br>愛犬専用カメラ Furbo（ファーボ）</h1>
+    </header>
     <div class="content">
-        <div class="section-title">愛犬家が選ぶ3つの理由</div>
+        <div class="headline">お留守番の不安を「いつでも一緒」に変える</div>
         
-        <div class="point-box">
-            <h3>1. 外出先から鮮明にチェック</h3>
-            <p>フルHDの高画質カメラで、愛犬の表情までくっきり。夜間でも暗視モードでバッチリ見守れます。</p>
+        <div class="coupon-box">
+            <p class="coupon-text">＼ メディア限定2,000円OFFクーポン ／</p>
+            <p class="coupon-code">LINK2000</p>
         </div>
 
-        <div class="point-box">
-            <h3>2. 寂しそうな時は声をかけて</h3>
-            <p>スマホから話しかけることができるので、いたずら防止や、寂しがっている時の声かけに最適です。</p>
+        <div class="card">
+            <b><span class="highlight">360°自動追尾</span>で見逃さない</b>
+            <p>1080pフルHDの鮮明な映像。AIが愛犬を認識し、部屋中を動き回っても自動で追いかけて見守ります。</p>
         </div>
 
-        <div class="point-box">
-            <h3>3. スマホ操作でおやつが飛ぶ！</h3>
-            <p>お留守番を頑張る愛犬に、スマホ操作でおやつをあげられます。遊びながら楽しく見守り。</p>
+        <div class="card">
+            <b>離れていても<span class="highlight">ポ～ンとおやつ</span></b>
+            <p>スマホ操作で外出先からおやつをあげられます。追いかける愛犬の可愛い姿にいつでも癒やされます。</p>
+        </div>
+
+        <div class="card">
+            <b>暗闇でも鮮明な<span class="highlight">次世代暗視モニター</span></b>
+            <p>自動カラー暗視モード搭載。夜のお留守番や暗い部屋でも、愛犬の姿をはっきり確認できます。</p>
+        </div>
+
+        <div class="card">
+            <b>愛犬の異変を<span class="highlight">スマホに自動通知</span></b>
+            <p>吠えた時はもちろん、AIドッグシッターが安全や健康のリスクを察知してあなたに代わって見守ります。</p>
         </div>
     </div>
 
-    <section class="cta-area">
-        <p style="font-weight: bold; margin-bottom: 15px; color: #d35400;">＼ 正規代理店で詳細をチェック ／</p>
-        
+    <div class="cta-section">
+        <span class="cta-label">＼ クーポンでお得に購入する ／</span>
+        <span class="arrow-anim">▼</span>
         <div class="ad-container">
             <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCG+7IATF6+3SUY+60OXD" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www21.a8.net/svt/bgt?aid=260324080454&wid=001&eno=01&mid=s00000017737001011000&mc=1"></a>
+            <img border="0" width="300" height="250" alt="Furboドッグカメラ 公式" src="https://www20.a8.net/svt/bgt?aid=260324080454&wid=001&eno=01&mid=s00000017737001011000&mc=1"></a>
             <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4AZNCG+7IATF6+3SUY+60OXD" alt="">
-            </div>
+        </div>
+    </div>
 
-        <p style="font-size: 13px; color: #888; margin-top: 10px;">※バナー画像をクリックすると公式サイトへ移動します。</p>
-    </section>
+    <div class="note">
+        ※クーポンは不定期開催のセール期間中は適用外となります。グッドデザイン賞受賞のインテリアに馴染むデザイン。iOS/Android対応。
+    </div>
 
     <footer>
-        <p>※本ページはプロモーションを含みます。</p>
-        <p>Copyright © 2026 ペットライフ・サポーター All Rights Reserved.</p>
+        <span class="footer-line1">※本ページはプロモーションを含みます。</span>
+        <span class="footer-line2">&copy; 2026 Furbo 愛犬見守り戦略ガイド</span>
     </footer>
 </div>
-
 </body>
 </html>
