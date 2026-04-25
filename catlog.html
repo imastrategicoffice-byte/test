@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>【公式】Catlog（キャトログ）- 愛猫の24時間を見守る首輪型デバイス</title>
     <style>
+        
         /* 全体の基本設定：スマホで端に文字がくっつかないよう余白を確保 */
         body { 
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
@@ -126,6 +127,24 @@
             padding: 30px 20px; 
             font-size: 11px; 
         }
+        /* 見出しが絶対にはみ出さない・崩れないための修正CSS */
+h1, .cta-label, .cta-text {
+    font-size: clamp(18px, 5vw, 24px) !important; /* 画面幅に合わせて伸縮 */
+    word-break: break-word;
+    overflow-wrap: break-word;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ＼ 〜 ／ のような装飾がバラバラにならないようにする */
+.cta-label, .cta-text, .cta-msg {
+    white-space: normal; /* 折り返しは許可するが */
+    display: inline-block; /* まとまりとして扱う */
+    padding: 0 10px;
+}
+
     </style>
 </head>
 <body>
