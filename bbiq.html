@@ -3,118 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>【公式】BBIQ（ビビック）- 九州の高速光回線</title>
+    <title>【公式】BBIQ（ビビック）- 九州限定の超高速光回線</title>
     <style>
-        /* ブラウザのデフォルト設定をリセット */
+        /* --- 戦略的リセットとベース設定 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body { 
-            font-family: sans-serif; 
+            font-family: 'Helvetica Neue', Arial, sans-serif; 
             background-color: #f0f4f8;
             color: #333;
-            /* 背景にリッチな斜めストライプを強制表示 */
+            /* 背景にCSSだけでリッチなストライプを描画 */
             background-image: repeating-linear-gradient(45deg, #e6edf5, #e6edf5 10px, #f0f4f8 10px, #f0f4f8 20px);
         }
 
-        .lp-container { 
+        .lp-wrapper { 
             max-width: 500px; 
             margin: 0 auto; 
             background: #ffffff; 
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
 
-        /* ヒーローエリア：青のグラデーション */
-        .hero-banner { 
+        /* --- ヒーローエリア --- */
+        .hero { 
             background: linear-gradient(135deg, #0052cc, #003399);
             color: #fff;
-            padding: 30px 15px;
+            padding: 40px 20px;
             text-align: center;
         }
 
-        /* 文字溢れ防止：clamp関数 */
-        .hero-banner h1 { 
-            font-size: clamp(1.2rem, 6vw, 1.6rem);
+        /* clampで文字溢れを自動防止 */
+        .hero h1 { 
+            font-size: clamp(1.2rem, 6.5vw, 1.7rem);
             line-height: 1.4;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            font-weight: bold;
         }
 
-        .hero-banner p { font-size: 0.9rem; opacity: 0.9; }
+        .hero p { 
+            font-size: 0.95rem; 
+            opacity: 0.9; 
+            line-height: 1.5;
+        }
 
-        /* コンテンツ部分 */
-        .content-body { padding: 20px 15px; }
+        /* --- メインコンテンツ --- */
+        .main-content { padding: 30px 15px; }
 
-        .title-ribbon {
+        .headline {
             background: #e6f0ff;
             color: #0052cc;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: bold;
-            padding: 10px;
+            padding: 12px;
             text-align: center;
-            border-left: 5px solid #0052cc;
-            margin-bottom: 20px;
+            border-left: 6px solid #0052cc;
+            margin-bottom: 25px;
         }
 
-        .point-card {
+        .card {
             background: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
+            border: 1px solid #e0e6ed;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            position: relative;
         }
 
-        .point-card h2 {
-            font-size: 1rem;
+        .card h2 {
+            font-size: 1.1rem;
             color: #0052cc;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             display: flex;
             align-items: center;
         }
 
-        .point-card h2::before { content: "✔"; margin-right: 8px; font-weight: bold; }
-
-        .price-info {
-            display: flex;
-            justify-content: space-around;
-            background: #fdfdfd;
-            padding: 15px;
-            border: 2px dashed #0052cc;
-            border-radius: 8px;
-            margin-top: 10px;
+        .card h2::before { 
+            content: "✔"; 
+            margin-right: 10px; 
+            color: #ff8c00;
+            font-weight: bold; 
         }
 
-        .price-item { text-align: center; }
-        .price-item b { font-size: 1.1rem; color: #e60000; }
+        .price-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 20px;
+        }
 
-        /* --- 広告エリア：余白を徹底排除 --- */
-        .cta-section {
-            background: #fff8f0;
-            padding: 20px 0; /* 左右の余白を消して画像を目立たせる */
+        .price-tag {
+            background: #f8fbff;
+            border: 2px solid #e6f0ff;
+            padding: 15px 10px;
+            border-radius: 10px;
             text-align: center;
-            border-top: 2px solid #ff8c00;
         }
 
-        .cta-text {
-            color: #d35400;
+        .price-tag span { font-size: 0.75rem; color: #666; display: block; }
+        .price-tag b { font-size: 1.2rem; color: #e60000; }
+
+        /* --- CTAエリア：余白を徹底的に排除 --- */
+        .cta-box {
+            background: #fff9f2;
+            padding: 40px 0 20px 0; /* 上にゆとりを持たせつつ左右下は画像に集中 */
+            text-align: center;
+            border-top: 3px solid #ff8c00;
+        }
+
+        .cta-label {
+            color: #e67e22;
             font-weight: bold;
-            font-size: clamp(1rem, 5vw, 1.2rem);
-            margin-bottom: 15px;
+            font-size: clamp(1rem, 5.5vw, 1.3rem);
+            margin-bottom: 20px;
             padding: 0 15px;
+            display: inline-block;
         }
 
-        /* 画像の下の謎の余白を消す最強設定 */
-        .ad-box {
+        /* バナー周りの謎の空白を物理的に消す設定 */
+        .ad-wrap {
             margin: 0 auto;
             max-width: 300px;
             line-height: 0;
             font-size: 0;
         }
 
-        .ad-box a {
+        .ad-wrap a {
             display: block;
             line-height: 0;
         }
 
-        .ad-box img {
+        .ad-wrap img {
             width: 100% !important;
             height: auto !important;
             display: block;
@@ -123,259 +141,38 @@
             border: none;
         }
 
-        footer {
-            background: #eee;
-            color: #777;
+        .footer-note {
+            background: #f2f2f2;
+            color: #888;
             text-align: center;
-            padding: 20px 10px;
+            padding: 25px 10px;
             font-size: 0.7rem;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
 
-<div class="lp-container">
-    <div class="hero-banner">
-        <h1>九州限定！BBIQ光で<br>最大30,000円キャッシュバック</h1>
-        <p>auスマホも九電セットもおトク！</p>
-    </div>
+<div class="lp-wrapper">
+    <header class="hero">
+        <h1>九州限定！BBIQ光回線で<br>最大30,000円還元実施中</h1>
+        <p>九州電力ユーザーなら、毎月のネット代が<br>さらにおトクに！auスマホ割も対応</p>
+    </header>
 
-    <div class="content-body">
-        <div class="title-ribbon">BBIQが選ばれる理由</div>
+    <div class="main-content">
+        <div class="headline">BBIQが選ばれる3つのポイント</div>
         
-        <div class="point-card">
-            <h2>超豪華キャッシュバック</h2>
-            <p>最大30,000円還元！さらにauスマホとのセット割で月々の料金もダウン。</p>
+        <div class="card">
+            <h2>超高額キャッシュバック</h2>
+            <p>当サイト限定の特典！最大30,000円の還元でおトクに高速インターネットを開始できます。</p>
         </div>
 
-        <div class="point-card">
-            <h2>九州電力セット割</h2>
-            <p>九電ユーザーならBBIQがさらにおトクに。地域のインフラだからこその安心感。</p>
+        <div class="card">
+            <h2>九電・auスマホセット割</h2>
+            <p>九州のインフラだからこその強み。電気代やスマホ代とまとめて固定費を削減しましょう。</p>
         </div>
 
-        <div class="price-info">
-            <div class="price-item">マンション<br><b>3,300円〜</b></div>
-            <div class="price-item">戸建住宅<br><b>4,070円〜</b></div>
+        <div class="price-container">
+            <div class="price-tag"><span>マンション</span><b>3,300円〜</b></div>
+            <div class="price-tag"><span>戸建住宅</span><b>4,070円〜</b></div>
         </div>
-    </div>
-
-    <div class="cta-section">
-        <div class="cta-text">＼ 今すぐキャンペーンをチェック ／</div>
-        
-        <div class="ad-box">
-            <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EJXH4I+42Y0+NWC81" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1"></a>
-            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" alt="">
-        </div>
-    </div>
-
-    <footer>
-        ※本ページはプロモーションを含みます。<br>
-        &copy; 2026 九州インターネット回線ガイド
-    </footer>
-</div>
-
-</body>
-</html>
-        .hero { 
-            padding: 35px 20px; 
-            text-align: center; 
-            background: linear-gradient(135deg, #0056b3 0%, #003d
-            color: #fff; 
-            padding: 10px 15px; 
-            text-align: center; 
-            font-weight: bold; 
-            font-size: 14px; 
-        }
-
-        .hero { 
-            padding: 40px 15px; 
-            text-align: center; 
-            /* 爽やかなグラデーションと波状の装飾 */
-            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
-            color: white; 
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* clamp関数による文字サイズ自動調整（崩れ防止） */
-        .hero h1 { 
-            font-size: clamp(20px, 6vw, 28px); 
-            margin-bottom: 15px; 
-            line-height: 1.4; 
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero p { 
-            font-size: clamp(14px, 4vw, 18px);
-            opacity: 0.9; 
-            margin: 0;
-        }
-
-        /* --- コンテンツエリア --- */
-        .content { 
-            padding: 30px 15px; 
-        }
-
-        /* リボン風の見出し装飾 */
-        .section-title { 
-            font-size: clamp(18px, 5vw, 22px);
-            text-align: center;
-            margin-bottom: 30px; 
-            padding: 10px;
-            background: var(--light-blue);
-            color: var(--main-blue);
-            border-left: 8px solid var(--main-blue);
-            font-weight: bold;
-            position: relative;
-        }
-
-        /* 特徴カードのリッチ化 */
-        .feature-card { 
-            background: #fff; 
-            border: 2px solid var(--light-blue); 
-            padding: 20px; 
-            border-radius: 15px; 
-            margin-bottom: 20px; 
-            position: relative;
-            transition: transform 0.3s;
-        }
-
-        .feature-card::before {
-            content: "CHECK";
-            position: absolute;
-            top: -10px;
-            left: 15px;
-            background: var(--accent-orange);
-            color: white;
-            font-size: 10px;
-            padding: 2px 10px;
-            border-radius: 10px;
-            font-weight: bold;
-        }
-
-        .feature-card h2 { 
-            margin-top: 0; 
-            font-size: 18px; 
-            color: var(--main-blue); 
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .price-box {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
-            margin-top: 20px;
-        }
-
-        .price-item {
-            flex: 1;
-            background: #f9f9f9;
-            padding: 10px;
-            border-radius: 8px;
-            text-align: center;
-            border: 1px solid #eee;
-        }
-
-        .price-label { font-size: 12px; color: #666; }
-        .price-value { font-size: 16px; font-weight: bold; color: #e60012; }
-
-        /* --- CTAエリア --- */
-        .cta-area { 
-            text-align: center; 
-            padding: 40px 15px; 
-            background: #fff9f0; 
-            border-top: 5px solid var(--accent-orange);
-        }
-
-        .ad-container { 
-            margin: 20px auto; 
-            max-width: 300px;
-        }
-
-        .ad-container img { 
-            width: 100% !important; 
-            height: auto !important; 
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .cta-msg {
-            font-weight: bold;
-            font-size: clamp(16px, 5vw, 20px);
-            color: #d35400;
-            display: inline-block;
-            padding: 5px 15px;
-            border: 2px solid #d35400;
-            border-radius: 50px;
-            margin-bottom: 15px;
-        }
-
-        /* --- フッター --- */
-        footer { 
-            background: #f2f2f2; 
-            color: #777; 
-            text-align: center; 
-            padding: 30px 15px; 
-            font-size: 11px; 
-        }
-    </style>
-</head>
-<body>
-
-<div class="container">
-    <header>九州のプロバイダーならBBIQ（ビビック）</header>
-
-    <section class="hero">
-        <h1>九州限定！高速光回線で<br>最大30,000円還元</h1>
-        <p>九州電力ユーザーなら、もっと安くなる。</p>
-    </section>
-
-    <div class="content">
-        <div class="section-title">BBIQが選ばれる理由</div>
-        
-        <div class="feature-card">
-            <h2>超豪華キャッシュバック</h2>
-            <p>当サイトからのお申込み限定！最大30,000円のキャッシュバックで、おトクにネットライフを始められます。</p>
-        </div>
-
-        <div class="feature-card">
-            <h2>auスマホ・九電とセットでおトク</h2>
-            <p>auスマートバリュー対応でスマホ代が割引！さらに九州電力ユーザーなら、BBIQの月額料金も永年割引対象です。</p>
-        </div>
-
-        <div class="price-box">
-            <div class="price-item">
-                <div class="price-label">集合住宅</div>
-                <div class="price-value">3,300円〜</div>
-            </div>
-            <div class="price-item">
-                <div class="price-label">戸建住宅</div>
-                <div class="price-value">4,070円〜</div>
-            </div>
-        </div>
-    </div>
-
-    <section class="cta-area">
-        <div class="cta-msg">＼ 九州の快適ネットライフへ ／</div>
-        
-        <div class="ad-container">
-            <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EJXH4I+42Y0+NWC81" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1"></a>
-            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" alt="">
-        </div>
-
-        <p style="font-size: 13px; color: #888;">※バナーをタップしてキャンペーン詳細へ</p>
-    </section>
-
-    <footer>
-        <p>※本ページはプロモーションを含みます。</p>
-        <p>Copyright © 2026 九州の光回線比較ガイド All Rights Reserved.</p>
-    </footer>
-</div>
-
-</body>
-</html>
