@@ -11,7 +11,6 @@
 
         body { 
             font-family: 'Helvetica Neue', Arial, sans-serif; 
-            /* エンタメ感を演出するリッチなドットパターン */
             background-image: radial-gradient(#d1d9e6 1px, transparent 1px);
             background-size: 20px 20px;
             color: #333;
@@ -31,9 +30,11 @@
         }
 
         header h1 { 
-            font-size: clamp(1.2rem, 6.5vw, 1.7rem); 
+            /* スマホ1行死守設定 */
+            font-size: clamp(1.1rem, 6vw, 1.7rem); 
             line-height: 1.4; 
             font-weight: bold;
+            white-space: nowrap;
         }
 
         /* --- コンテンツエリア --- */
@@ -42,12 +43,14 @@
         .headline {
             background: #fff4f4;
             color: #e60012;
-            font-size: 1.1rem;
             font-weight: bold;
             padding: 12px;
             text-align: center;
             border-bottom: 3px solid #e60012;
             margin-bottom: 25px;
+            /* スマホ1行死守設定 */
+            font-size: clamp(1rem, 5.5vw, 1.1rem);
+            white-space: nowrap;
         }
 
         .card { 
@@ -78,7 +81,9 @@
         .cta-label { 
             font-weight: bold; color: #d35400; 
             margin-bottom: 20px; display: inline-block; 
-            font-size: clamp(1rem, 5.5vw, 1.2rem);
+            /* スマホ1行死守設定 */
+            font-size: clamp(0.95rem, 5.5vw, 1.2rem);
+            white-space: nowrap;
             padding: 0 15px;
         }
 
@@ -107,6 +112,8 @@
         footer { 
             background: #333; color: #fff; text-align: center; 
             padding: 20px 10px; font-size: 0.7rem; opacity: 0.9;
+            /* フッター1行死守設定 */
+            white-space: nowrap;
         }
     </style>
 </head>
@@ -122,36 +129,3 @@
 
         <div class="card">
             <b>約70チャンネルの圧倒的充実</b>
-            <p>スポーツ、音楽、映画、アニメ。専門チャンネルだからこその深さがあります。加入後2週間は約70チャンネルを無料で楽しめます！</p>
-        </div>
-
-        <div class="card">
-            <b>録画も簡単、DVD保存もOK</b>
-            <p>テレビやレコーダーで手軽に録画。お気に入りの番組をずっと手元に残せます。申し込みから最短30分で視聴開始！</p>
-        </div>
-
-        <div class="plan-list">
-            <div class="plan-item"><strong>基本プラン：</strong>50ch見放題。3台まで追加料金なし！</div>
-            <div class="plan-item"><strong>プロ野球セット：</strong>セ・パ12球団公式戦全試合。スマホ視聴OK。</div>
-            <div class="plan-item"><strong>セレクト5：</strong>お好きな5chを選んで賢く節約。</div>
-        </div>
-    </div>
-
-    <div class="cta-section">
-        <span class="cta-label">＼ 最短30分で視聴スタート！ ／</span>
-        <div class="ad-container">
-            <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+ELPRXU+461Y+6L9O1" rel="nofollow">
-                <img src="https://www23.a8.net/svt/bgt?aid=250507883&wid=001&eno=01&mid=s00000019447001107000&mc=1" alt="スカパー広告">
-            </a>
-            <img src="https://www13.a8.net/0.gif?a8mat=45593Y+ELPRXU+461Y+6L9O1" class="tracking-pixel" alt="">
-        </div>
-    </div>
-
-    <footer>
-        ※本ページはプロモーションを含みます。<br>
-        &copy; 2026 スカパー！視聴ガイド
-    </footer>
-</div>
-
-</body>
-</html>
