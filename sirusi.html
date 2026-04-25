@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <title>印鑑作成・シャチハタ・ゴム印なら【Sirusi】</title>
     <style>
-        /* --- リセットと基本設定 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html, body { width: 100%; background-color: #f9f7f2; overflow-x: hidden; }
 
@@ -22,33 +21,31 @@
             box-shadow: 0 0 15px rgba(0,0,0,0.05);
         }
 
-        /* --- ヒーローエリア --- */
         header { 
             background: #2c2c2c; 
             color: #fff; padding: 30px 15px; text-align: center;
         }
 
         header h1 { 
-            /* スマホ1行死守 */
-            font-size: clamp(1.1rem, 6vw, 1.6rem); 
+            /* 1行死守：最小値を0.9remまで下げて余裕を持たせる */
+            font-size: clamp(0.9rem, 6vw, 1.6rem); 
             font-weight: bold;
             white-space: nowrap;
-            letter-spacing: 0.05em;
+            letter-spacing: -0.02em;
         }
 
-        /* --- コンテンツエリア --- */
         .content { padding: 25px 20px; }
 
         .headline {
-            background: #fff9e6;
-            color: #b38b4d;
+            background: #fff4f4; /* 視認性向上のため薄い赤に変更 */
+            color: #e60012;
             font-weight: bold;
             padding: 10px;
             text-align: center;
-            border: 1px solid #b38b4d;
+            border-bottom: 2px solid #e60012;
             margin-bottom: 25px;
-            /* スマホ1行死守 */
-            font-size: clamp(0.95rem, 5.2vw, 1.1rem);
+            /* 1行死守 */
+            font-size: clamp(0.85rem, 5vw, 1.1rem);
             white-space: nowrap;
         }
 
@@ -60,7 +57,6 @@
         .feature-card b { color: #b38b4d; display: block; margin-bottom: 5px; font-size: 1.05rem; }
         .feature-card p { font-size: 0.9rem; color: #666; }
 
-        /* --- 広告エリア：バナー固定戦略 --- */
         .cta-section { 
             background: #fdfdfd; 
             text-align: center; 
@@ -71,8 +67,8 @@
         .cta-label { 
             font-weight: bold; color: #2c2c2c; 
             margin-bottom: 15px; display: inline-block; 
-            /* スマホ1行死守 */
-            font-size: clamp(0.9rem, 5vw, 1.1rem);
+            /* 1行死守 */
+            font-size: clamp(0.9rem, 5.5vw, 1.2rem);
             white-space: nowrap;
         }
 
@@ -81,15 +77,11 @@
             line-height: 0; font-size: 0; position: relative;
         }
 
-        .ad-container a { display: block; line-height: 0; }
-
-        /* 300x250バナーを中央配置しつつスマホ幅に適合させる */
         .ad-container img { 
             width: 100% !important; height: auto !important; 
             display: block !important; border: none;
         }
 
-        /* トラッキングピクセル隔離 */
         .tracking-pixel {
             position: absolute;
             width: 1px; height: 1px;
@@ -98,9 +90,12 @@
 
         footer { 
             background: #2c2c2c; color: #fff; text-align: center; 
-            padding: 20px 10px; font-size: 0.7rem;
-            /* フッター1行死守 */
+            padding: 20px 10px; 
+            /* フッター見切れ防止：フォントサイズをさらに絞り、文字間隔を詰める */
+            font-size: clamp(0.6rem, 3.2vw, 0.75rem);
             white-space: nowrap;
+            letter-spacing: -0.03em;
+            opacity: 0.9;
         }
     </style>
 </head>
@@ -112,7 +107,7 @@
     </header>
 
     <div class="content">
-        <div class="headline">最短即日出荷・送料無料！</div>
+        <div class="headline">最短即日出荷・全国送料無料！</div>
 
         <div class="feature-card">
             <b>モダンなデザイン印影</b>
@@ -120,7 +115,7 @@
         </div>
 
         <div class="feature-card">
-            <b>確かな品質と保証</b>
+            <b>確かな品質と10年保証</b>
             <p>厳選された素材を使用。長く使うものだからこそ、10年保証で安心してご利用いただけます。</p>
         </div>
     </div>
