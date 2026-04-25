@@ -15,7 +15,7 @@
         header { background: linear-gradient(135deg, #a40000, #d40000); color: #fff; padding: 40px 15px; text-align: center; }
         header h1 { font-size: clamp(1.1rem, 5vw, 1.8rem); font-weight: bold; line-height: 1.4; }
         
-        /* スマホ1行死守：プロモーション（解約金全額還元など） */
+        /* スマホ1行死守：プロモーション（絶対に改行させない） */
         .promo-banner { 
             background: #fff0f0; color: #a40000; text-align: center; padding: 12px 10px; font-weight: bold; border-bottom: 2px solid #a40000; 
             font-size: clamp(0.65rem, 3.6vw, 1.1rem); 
@@ -42,7 +42,7 @@
         .ad-container img { width: 100% !important; height: auto !important; border: 1px solid #ddd; }
         .tracking-pixel { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
         
-        /* フッター：全注釈の改行を防止 */
+        /* フッター：全注釈の改行を物理的に防止 */
         footer { background: #333; color: #fff; text-align: center; padding: 30px 10px; font-size: 0.75rem; }
         .footer-note { 
             display: block; font-size: clamp(0.55rem, 3vw, 0.75rem); 
