@@ -25,28 +25,31 @@
             margin: 0 auto; 
             background: #ffffff; 
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            /* PCでの縦長すぎる余白を解消：高さをコンテンツに合わせる */
+            /* PCでの縦長すぎる余白を解消 */
             min-height: auto; 
         }
 
-        /* --- 2. ヘッダー：スマホの見切れを物理回避（パディング強化） --- */
+        /* --- 2. ヘッダー：スマホの見切れを物理回避（文字を確実に下に配置） --- */
         header { 
             background: linear-gradient(135deg, #005bac, #0076e4); 
             color: #fff; 
-            /* 上部余白を大幅に確保して文字を押し下げる */
-            padding: calc(75px + env(safe-area-inset-top)) 15px 40px; 
+            /* padding-topを十分に確保し、safe-areaを考慮して文字が絶対に切れない位置に配置 */
+            padding: calc(90px + env(safe-area-inset-top)) 10px 40px; 
             text-align: center; 
+            position: relative;
         }
 
         header h1 { 
-            /* 1行死守：画面幅に応じて極小まで縮小設定 */
-            font-size: clamp(0.5rem, 5.8vw, 1.4rem); 
+            /* 1行死守：文字サイズをスマホに合わせて柔軟に縮小 */
+            font-size: clamp(0.5rem, 5.5vw, 1.4rem); 
             font-weight: bold; 
             white-space: nowrap; 
             line-height: 1.2;
+            display: block;
+            margin: 0 auto;
         }
 
-        /* --- 3. コンテンツ：PCでのスカスカ感を解消 --- */
+        /* --- 3. コンテンツ：PCでのスカスカ感を解消し中身を凝縮 --- */
         .content { 
             padding: 20px 20px 10px; 
         }
@@ -66,13 +69,12 @@
         .card b { color: #005bac; display: block; margin-bottom: 4px; font-size: 0.95rem; }
         .card p { font-size: 0.85rem; color: #555; }
 
-        /* --- 4. CTA：バナー位置の適正化 --- */
+        /* --- 4. CTA：バナー位置を適正化し間延びを完全に防止 --- */
         .cta-section { 
             background: #fdfdfd; 
             text-align: center; 
             padding: 20px 10px 30px; 
             border-top: 1px solid #eee; 
-            /* 縦に間延びさせない設定 */
             margin-top: 0; 
         }
 
@@ -92,7 +94,7 @@
         /* --- 5. フッター --- */
         footer { 
             background: #333; color: #fff; 
-            padding: 15px 20px calc(20px + env(safe-area-inset-bottom)); 
+            padding: 15px 20px calc(25px + env(safe-area-inset-bottom)); 
             font-size: 0.7rem; line-height: 1.6; 
         }
         .footer-line1 { text-align: left; display: block; }
