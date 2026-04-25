@@ -2,203 +2,147 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【DMM 株】初心者でも安心！最短即日で株取引スタート</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>DMM 株 - 初心者でも最短即日で取引開始</title>
     <style>
-        /* 全体の基本設定 */
+        /* --- 全テキスト収容・改行最適化スペック --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* html背景色をヘッダー主色と同期し、上部の白飛びを根絶 */
+        html { background-color: #00843d; overflow-x: hidden; }
+        
         body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
-            line-height: 1.8; 
+            width: 100%; 
+            background-color: #f4f7f4; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
             color: #333; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #f0f4f8; 
+            line-height: 1.6; 
+            overflow-x: hidden;
         }
-        .container { 
-            max-width: 600px; 
+
+        .lp-container { 
+            width: 100%; 
+            max-width: 500px; 
             margin: 0 auto; 
-            background: #fff; 
-            padding-bottom: 40px;
-        }
-        header { 
-            background: #1a2a3a; 
-            color: #fff; 
-            padding: 15px; 
-            text-align: center; 
-            font-weight: bold; 
-            font-size: 14px; 
-        }
-        /* ヒーローエリア */
-        .hero { 
-            padding: 40px 20px; 
-            text-align: center; 
-            background: linear-gradient(135deg, #1a2a3a 0%, #2c3e50 100%); 
-            color: white; 
-        }
-        .hero h1 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            line-height: 1.4; 
-        }
-        .hero p { 
-            font-size: 16px; 
-            opacity: 0.9; 
-            margin: 0;
-        }
-        .highlight-badge {
-            display: inline-block;
-            background: #e6b422;
-            color: #1a2a3a;
-            padding: 2px 12px;
-            border-radius: 20px;
-            font-weight: bold;
-            font-size: 14px;
-            margin-bottom: 10px;
-        }
-        /* コンテンツ */
-        .content { 
-            padding: 25px 15px; 
-        }
-        .section-title { 
-            font-size: 20px; 
-            text-align: center;
-            margin-bottom: 25px; 
-            font-weight: bold; 
-            color: #1a2a3a;
-        }
-        /* メリット一覧 */
-        .point-card { 
-            background: #fff; 
-            border: 1px solid #d1d9e0; 
-            padding: 18px; 
-            border-radius: 10px; 
-            margin-bottom: 15px; 
-        }
-        .point-card h2 { 
-            margin-top: 0; 
-            font-size: 17px; 
-            color: #007bff; 
-            margin-bottom: 8px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-        }
-        .point-card p { 
-            font-size: 15px; 
-            margin: 0; 
-            color: #444;
-        }
-        /* ステップ案内 */
-        .step-box {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .step-item {
+            background: #ffffff; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            min-height: auto;
+            overflow-x: hidden;
             display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-            font-size: 15px;
+            flex-direction: column;
         }
-        .step-num {
-            background: #1a2a3a;
-            color: #fff;
-            width: 24px;
-            height: 24px;
-            border-radius: 50%;
-            text-align: center;
-            line-height: 24px;
-            margin-right: 10px;
-            flex-shrink: 0;
-            font-size: 12px;
-        }
-        /* CTAエリア */
-        .cta-area { 
+
+        header { 
+            background: linear-gradient(135deg, #00843d, #00a64d); 
+            color: #fff; 
+            /* OSバー回避のためのセーフエリア確保 */
+            padding: calc(95px + env(safe-area-inset-top)) 15px 45px; 
             text-align: center; 
-            padding: 40px 20px; 
-            background: #fff9e6; 
-            border-radius: 20px;
-            margin: 20px 15px;
         }
-        .ad-container { 
-            margin: 20px 0; 
+
+        header h1 { 
+            /* 全テキスト改行最適化 */
+            font-size: clamp(1.1rem, 5.5vw, 1.5rem); 
+            font-weight: bold; 
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
         }
-        .ad-container img { 
-            max-width: 100% !important; 
-            height: auto !important; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+
+        .content { padding: 25px 20px 10px; }
+
+        .headline { 
+            background: #e6f4ea; color: #00843d; font-weight: bold; 
+            padding: 12px; text-align: center; border-bottom: 3px solid #00843d; 
+            margin-bottom: 25px;
+            font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
         }
-        .cta-msg {
-            font-weight: bold;
-            font-size: 18px;
-            color: #b8860b;
-            margin-bottom: 15px;
+
+        .card { 
+            background: #fafafa; border: 1px solid #eee; border-radius: 8px; 
+            padding: 18px; margin-bottom: 18px; 
+            border-left: 5px solid #00843d; 
         }
-        /* フッター */
+        .card b { 
+            color: #00843d; display: block; margin-bottom: 6px; font-size: 1rem; 
+            word-break: break-word;
+        }
+        .card p { 
+            font-size: 0.85rem; color: #555; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        .cta-section { 
+            background: #fff; 
+            text-align: center; 
+            padding: 20px 10px 40px; 
+            border-top: 1px solid #eee; 
+        }
+
+        .cta-label { 
+            font-weight: bold; color: #333; margin-bottom: 15px; display: inline-block; 
+            font-size: clamp(0.9rem, 4.8vw, 1.1rem);
+            word-break: break-word;
+        }
+
+        .ad-container { width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; }
+
+        .note {
+            font-size: 0.7rem;
+            color: #888;
+            padding: 0 20px 20px;
+            word-break: break-word;
+        }
+
         footer { 
-            background: #e9ecef; 
-            color: #6c757d; 
-            text-align: center; 
-            padding: 30px 20px; 
-            font-size: 11px; 
+            background: #333; color: #fff; 
+            padding: 20px 20px calc(25px + env(safe-area-inset-bottom)); 
+            font-size: 0.7rem; line-height: 1.6; 
         }
+        .footer-line1 { text-align: left; display: block; }
+        .footer-line2 { text-align: right; display: block; opacity: 0.7; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>株取引を始めるなら「DMM 株」</header>
-
-    <section class="hero">
-        <div class="highlight-badge">投資初心者でも簡単！</div>
-        <h1>日本株も米国株もアプリ1つで<br>最短即日から取引開始！</h1>
-        <p>郵送書類不要。スピーディーにスタート</p>
-    </section>
-
+<div class="lp-container">
+    <header>
+        <h1>投資初心者でも簡単！はじめての株取引は「DMM 株」で！</h1>
+    </header>
     <div class="content">
-        <div class="section-title">DMM 株が選ばれる理由</div>
-        
-        <div class="point-card">
-            <h2>1,000円以下で株主になれる</h2>
-            <p>日本株も米国株も少額から購入可能。まずは自分に合った金額で気軽に投資を始められます。</p>
+        <div class="headline">最短即日取引開始！かんたん3ステップ</div>
+        <div class="card">
+            <b>スマホでスピード本人確認</b>
+            <p>面倒な郵送書類の受け取り不要。アカウント入力から本人確認まで最短5分で完了します。</p>
         </div>
-
-        <div class="point-card">
-            <h2>業界屈指のお得な手数料</h2>
-            <p>米国株の手数料は0ドル〜！国内信用取引も0円と、コストを抑えて賢く運用できます。</p>
+        <div class="card">
+            <b>1,000円以下の少額投資に対応</b>
+            <p>日本株も米国株も少額からスタート可能。アプリ1つでNISAもスムーズに取引できます。</p>
         </div>
-
-        <div class="point-card">
-            <h2>初心者向け「かんたんモード」</h2>
-            <p>高機能ツールの中に、シンプルで直感的な「かんたんモード」を搭載。迷わずスムーズに取引可能です。</p>
-        </div>
-
-        <div class="step-box">
-            <p style="font-weight: bold; margin-top: 0;">最短即日！開始までの3ステップ</p>
-            <div class="step-item"><span class="step-num">1</span> アカウント情報の入力（約5分）</div>
-            <div class="step-item"><span class="step-num">2</span> 本人確認書類をスマホで提出</div>
-            <div class="step-item"><span class="step-num">3</span> 審査完了後、すぐにお取引開始！</div>
+        <div class="card">
+            <b>取引手数料がお得！</b>
+            <p>米国株手数料は0ドル〜、国内現物取引は55円〜。取引するほどポイントも貯まります。</p>
         </div>
     </div>
-
-    <section class="cta-area">
-        <div class="cta-msg">▼ お得なキャンペーンをチェック ▼</div>
-        
+    <div class="cta-section">
+        <span class="cta-label">＼ DMM 株 公式サイトはこちら ／</span>
         <div class="ad-container">
             <a href="https://px.a8.net/svt/ejp?a8mat=4AVBW3+5OT4VM+1WP2+15P77L" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www28.a8.net/svt/bgt?aid=260122611344&wid=001&eno=01&mid=s00000008903007004000&mc=1"></a>
-            <img border="0" width="1" height="1" src="https://www12.a8.net/0.gif?a8mat=4AVBW3+5OT4VM+1WP2+15P77L" alt="">
+            <img border="0" width="300" height="250" alt="" src="https://www26.a8.net/svt/bgt?aid=260122611344&wid=001&eno=01&mid=s00000008903007004000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AVBW3+5OT4VM+1WP2+15P77L" alt="">
         </div>
-
-        <p style="font-size: 13px; color: #888;">※バナーをタップして公式サイトへ移動します</p>
-    </section>
-
+    </div>
+    <div class="note">
+        ※最短手続きで本人認証が完結した場合の申込完了から登録審査完了までの時間。当社休業日や不備がある場合を除く。
+    </div>
     <footer>
-        <p>※最短手続きで本人認証が完結した場合の申込完了から登録審査完了までの時間。当社休業日や申込内容等に不備があった場合は除く。</p>
-        <p>※本ページはプロモーションを含みます。</p>
-        <p>Copyright © 2026 初めての株投資ガイド All Rights Reserved.</p>
+        <span class="footer-line1">※本ページはプロモーションを含みます。</span>
+        <span class="footer-line2">&copy; 2026 DMM 株 投資ガイド</span>
     </footer>
 </div>
-
 </body>
 </html>
