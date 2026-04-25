@@ -2,38 +2,181 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【公式】BBIQ（ビビック）- 九州限定の超高速光回線</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>【公式】BBIQ（ビビック）- 九州の高速光回線</title>
     <style>
-        /* --- 徹底的な余白リセット --- */
+        /* ブラウザのデフォルト設定をリセット */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        :root {
-            --main-blue: #0056b3;
-            --sub-blue: #eef6ff;
-            --accent-orange: #ff8c00;
-            --text-dark: #333;
-        }
-
+        
         body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
-            line-height: 1.6; 
-            color: var(--text-dark); 
-            background-color: #f4f7fa;
-            /* 背景にCSSで薄いストライプ模様を配置（リッチ化） */
-            background-image: linear-gradient(45deg, #eef3f9 25%, transparent 25%, transparent 50%, #eef3f9 50%, #eef3f9 75%, transparent 75%, transparent);
-            background-size: 40px 40px;
+            font-family: sans-serif; 
+            background-color: #f0f4f8;
+            color: #333;
+            /* 背景にリッチな斜めストライプを強制表示 */
+            background-image: repeating-linear-gradient(45deg, #e6edf5, #e6edf5 10px, #f0f4f8 10px, #f0f4f8 20px);
         }
 
-        .container { 
-            max-width: 500px; /* スマホに最適化した幅 */
+        .lp-container { 
+            max-width: 500px; 
             margin: 0 auto; 
-            background: #fff; 
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+            background: #ffffff; 
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
 
-        /* --- ヒーローエリア --- */
+        /* ヒーローエリア：青のグラデーション */
+        .hero-banner { 
+            background: linear-gradient(135deg, #0052cc, #003399);
+            color: #fff;
+            padding: 30px 15px;
+            text-align: center;
+        }
+
+        /* 文字溢れ防止：clamp関数 */
+        .hero-banner h1 { 
+            font-size: clamp(1.2rem, 6vw, 1.6rem);
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .hero-banner p { font-size: 0.9rem; opacity: 0.9; }
+
+        /* コンテンツ部分 */
+        .content-body { padding: 20px 15px; }
+
+        .title-ribbon {
+            background: #e6f0ff;
+            color: #0052cc;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            border-left: 5px solid #0052cc;
+            margin-bottom: 20px;
+        }
+
+        .point-card {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+
+        .point-card h2 {
+            font-size: 1rem;
+            color: #0052cc;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .point-card h2::before { content: "✔"; margin-right: 8px; font-weight: bold; }
+
+        .price-info {
+            display: flex;
+            justify-content: space-around;
+            background: #fdfdfd;
+            padding: 15px;
+            border: 2px dashed #0052cc;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .price-item { text-align: center; }
+        .price-item b { font-size: 1.1rem; color: #e60000; }
+
+        /* --- 広告エリア：余白を徹底排除 --- */
+        .cta-section {
+            background: #fff8f0;
+            padding: 20px 0; /* 左右の余白を消して画像を目立たせる */
+            text-align: center;
+            border-top: 2px solid #ff8c00;
+        }
+
+        .cta-text {
+            color: #d35400;
+            font-weight: bold;
+            font-size: clamp(1rem, 5vw, 1.2rem);
+            margin-bottom: 15px;
+            padding: 0 15px;
+        }
+
+        /* 画像の下の謎の余白を消す最強設定 */
+        .ad-box {
+            margin: 0 auto;
+            max-width: 300px;
+            line-height: 0;
+            font-size: 0;
+        }
+
+        .ad-box a {
+            display: block;
+            line-height: 0;
+        }
+
+        .ad-box img {
+            width: 100% !important;
+            height: auto !important;
+            display: block;
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        footer {
+            background: #eee;
+            color: #777;
+            text-align: center;
+            padding: 20px 10px;
+            font-size: 0.7rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="lp-container">
+    <div class="hero-banner">
+        <h1>九州限定！BBIQ光で<br>最大30,000円キャッシュバック</h1>
+        <p>auスマホも九電セットもおトク！</p>
+    </div>
+
+    <div class="content-body">
+        <div class="title-ribbon">BBIQが選ばれる理由</div>
+        
+        <div class="point-card">
+            <h2>超豪華キャッシュバック</h2>
+            <p>最大30,000円還元！さらにauスマホとのセット割で月々の料金もダウン。</p>
+        </div>
+
+        <div class="point-card">
+            <h2>九州電力セット割</h2>
+            <p>九電ユーザーならBBIQがさらにおトクに。地域のインフラだからこその安心感。</p>
+        </div>
+
+        <div class="price-info">
+            <div class="price-item">マンション<br><b>3,300円〜</b></div>
+            <div class="price-item">戸建住宅<br><b>4,070円〜</b></div>
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <div class="cta-text">＼ 今すぐキャンペーンをチェック ／</div>
+        
+        <div class="ad-box">
+            <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EJXH4I+42Y0+NWC81" rel="nofollow">
+            <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" alt="">
+        </div>
+    </div>
+
+    <footer>
+        ※本ページはプロモーションを含みます。<br>
+        &copy; 2026 九州インターネット回線ガイド
+    </footer>
+</div>
+
+</body>
+</html>
         .hero { 
             padding: 35px 20px; 
             text-align: center; 
