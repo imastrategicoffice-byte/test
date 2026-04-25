@@ -5,51 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>だれでもモバイル - 審査不要の音声SIM</title>
     <style>
-        /* --- 徹底した突き出し・見切れ防止スペック --- */
+        /* --- 徹底した見切れ・空白排除スペック --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        html, body { width: 100%; background-color: #f4f7f9; overflow-x: hidden; }
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: #333; line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
-        .lp-container { width: 100%; max-width: 500px; margin: 0 auto; background: #ffffff; box-shadow: 0 0 20px rgba(0,0,0,0.1); flex-grow: 1; display: flex; flex-direction: column; }
+        
+        /* スマホ最上部の隙間（白飛び）を背景色で封鎖 */
+        html { background-color: #005bac; }
+        
+        body { 
+            width: 100%; 
+            background-color: #f4f7f9; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
+            color: #333; 
+            line-height: 1.4; 
+            display: flex; 
+            flex-direction: column; 
+            min-height: 100vh;
+        }
 
-        /* ヘッダー：最上部の見切れを物理的に回避するパディング設定 */
+        .lp-container { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            flex-grow: 1; 
+            display: flex; 
+            flex-direction: column;
+        }
+
+        /* ヘッダー：文字が絶対に見切れないよう、内側の余白(padding)を極限まで強化 */
         header { 
             background: linear-gradient(135deg, #005bac, #0076e4); 
             color: #fff; 
-            padding: calc(60px + env(safe-area-inset-top)) 15px 35px; /* 上部パディングをさらに強化 */
+            /* 上部に十分なセーフエリアを確保し、文字を中央へ押し下げる */
+            padding: calc(60px + env(safe-area-inset-top)) 10px 40px; 
             text-align: center; 
+            border-bottom: 2px solid rgba(255,255,255,0.2);
         }
 
         header h1 { 
-            /* 1行死守：画面幅に応じて極限まで縮小 */
-            font-size: clamp(0.5rem, 5.8vw, 1.4rem); 
+            /* 1行死守：文字サイズをさらに柔軟に縮小設定 */
+            font-size: clamp(0.5rem, 5.5vw, 1.3rem); 
             font-weight: bold; 
-            white-space: nowrap; 
-            line-height: 1.2;
+            white-space: nowrap;
+            display: block;
+            width: 100%;
         }
 
-        /* コンテンツ */
-        .content { padding: 25px 20px; flex-grow: 1; }
+        /* コンテンツ：PCでの間延びを防ぐため、余白を圧縮 */
+        .content { 
+            padding: 10px 20px; 
+            flex-grow: 0; 
+        }
+
         .headline { 
             background: #fff4f4; color: #e60012; font-weight: bold; 
-            padding: 12px; text-align: center; border-bottom: 3px solid #e60012; 
-            margin-bottom: 25px; 
+            padding: 8px; text-align: center; border-bottom: 3px solid #e60012; 
+            margin-bottom: 15px;
             font-size: clamp(0.5rem, 5vw, 1.1rem); white-space: nowrap; 
         }
 
-        .card { background: #f9f9f9; border: 1px solid #eee; border-radius: 12px; padding: 18px; margin-bottom: 20px; border-left: 5px solid #005bac; }
-        .card b { color: #005bac; display: block; margin-bottom: 8px; font-size: 1rem; }
+        .card { 
+            background: #f9f9f9; border: 1px solid #eee; border-radius: 8px; 
+            padding: 12px; margin-bottom: 12px;
+            border-left: 5px solid #005bac; 
+        }
+        .card b { color: #005bac; display: block; margin-bottom: 4px; font-size: 0.95rem; }
         .card p { font-size: 0.85rem; color: #555; }
 
-        /* CTA */
-        .cta-section { background: #fdfdfd; text-align: center; padding: 30px 10px 40px; border-top: 1px solid #eee; }
-        .cta-label { font-weight: bold; color: #333; margin-bottom: 15px; display: inline-block; font-size: clamp(0.5rem, 5.5vw, 1.1rem); white-space: nowrap; }
-        .ad-container { width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; font-size: 0; position: relative; }
-        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; }
+        /* CTA：空白を詰め、バナーを適切な位置に配置 */
+        .cta-section { 
+            background: #fdfdfd; 
+            text-align: center; 
+            padding: 15px 10px 30px; 
+            border-top: 1px solid #eee; 
+            margin-top: auto; 
+        }
 
-        /* フッター */
-        footer { background: #333; color: #fff; padding: 20px 20px calc(40px + env(safe-area-inset-bottom)); font-size: 0.75rem; line-height: 1.8; margin-top: auto; }
+        .cta-label { 
+            font-weight: bold; color: #333; margin-bottom: 8px; display: inline-block; 
+            font-size: clamp(0.5rem, 5.5vw, 1rem); white-space: nowrap; 
+        }
+
+        .ad-container { 
+            width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; font-size: 0; 
+        }
+        .ad-container img { 
+            width: 100% !important; height: auto !important; 
+            display: block !important; border: none; 
+        }
+
+        /* フッター：署名なし */
+        footer { 
+            background: #333; color: #fff; 
+            padding: 15px 20px calc(20px + env(safe-area-inset-bottom)); 
+            font-size: 0.7rem; line-height: 1.6; 
+        }
         .footer-line1 { text-align: left; display: block; }
-        .footer-line2 { text-align: right; display: block; opacity: 0.8; }
+        .footer-line2 { text-align: right; display: block; opacity: 0.7; }
     </style>
 </head>
 <body>
@@ -64,8 +116,8 @@
             <p>審査不要の音声SIMだから、大手キャリアで契約できなかった方でも本人名義でスマホが持てます。</p>
         </div>
         <div class="card">
-            <b>大手キャリアで契約ができない方へ</b>
-            <p>身分証と銀行口座さえあれば審査不要。レンタルスマホより低料金で、全プランかけ放題付きです。</p>
+            <b>レンタルスマホより低料金</b>
+            <p>全プランかけ放題付き。安心のNTTドコモネットワークを利用した高品質なサービスです。</p>
         </div>
     </div>
     <div class="cta-section">
