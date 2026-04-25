@@ -12,7 +12,6 @@
             font-family: 'Helvetica Neue', Arial, sans-serif; 
             background-color: #f0f4f8;
             color: #333;
-            /* 背景にCSSだけでリッチなストライプを描画 */
             background-image: repeating-linear-gradient(45deg, #e6edf5, #e6edf5 10px, #f0f4f8 10px, #f0f4f8 20px);
         }
 
@@ -32,7 +31,6 @@
             text-align: center;
         }
 
-        /* clampで文字溢れを自動防止 */
         .hero h1 { 
             font-size: clamp(1.2rem, 6.5vw, 1.7rem);
             line-height: 1.4;
@@ -66,7 +64,6 @@
             border-radius: 12px;
             padding: 20px;
             margin-bottom: 20px;
-            position: relative;
         }
 
         .card h2 {
@@ -105,7 +102,7 @@
         /* --- CTAエリア：余白を徹底的に排除 --- */
         .cta-box {
             background: #fff9f2;
-            padding: 40px 0 20px 0; /* 上にゆとりを持たせつつ左右下は画像に集中 */
+            padding: 40px 0 20px 0;
             text-align: center;
             border-top: 3px solid #ff8c00;
         }
@@ -130,6 +127,7 @@
         .ad-wrap a {
             display: block;
             line-height: 0;
+            text-decoration: none;
         }
 
         .ad-wrap img {
@@ -161,18 +159,34 @@
 
     <div class="main-content">
         <div class="headline">BBIQが選ばれる3つのポイント</div>
-        
         <div class="card">
             <h2>超高額キャッシュバック</h2>
             <p>当サイト限定の特典！最大30,000円の還元でおトクに高速インターネットを開始できます。</p>
         </div>
-
         <div class="card">
             <h2>九電・auスマホセット割</h2>
             <p>九州のインフラだからこその強み。電気代やスマホ代とまとめて固定費を削減しましょう。</p>
         </div>
-
         <div class="price-container">
             <div class="price-tag"><span>マンション</span><b>3,300円〜</b></div>
             <div class="price-tag"><span>戸建住宅</span><b>4,070円〜</b></div>
         </div>
+    </div>
+
+    <section class="cta-box">
+        <div class="cta-label">＼ 九州No.1の満足度を今すぐ体験 ／</div>
+        <div class="ad-wrap">
+            <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EJXH4I+42Y0+NWC81" rel="nofollow">
+            <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" alt="">
+        </div>
+    </section>
+
+    <footer class="footer-note">
+        ※本ページはプロモーションを含みます。<br>
+        Copyright &copy; 2026 九州インターネット回線比較ガイド
+    </footer>
+</div>
+
+</body>
+</html>
