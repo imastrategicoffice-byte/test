@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【公式】BBIQ（ビビック）- 九州限定のおトクな高速光回線</title>
+    <style>
+        /* --- 戦略的CSS：背景デザインと崩れ防止 --- */
+        :root {
+            --main-blue: #0066cc;
+            --light-blue: #e6f2ff;
+            --accent-orange: #ff9900;
+        }
+
+        body { 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            /* 背景にCSSで幾何学模様（ドットグリッド）を配置 */
+            background-color: #f0f7ff;
+            background-image: radial-gradient(#d1e4ff 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: #fff; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* --- ヘッダー・ヒーローエリア --- */
+        header { 
+            background: var(--main-blue); 
+            color: #fff; 
+            padding: 10px 15px; 
+            text-align: center; 
+            font-weight: bold; 
+            font-size: 14px; 
+        }
+
+        .hero { 
+            padding: 40px 15px; 
+            text-align: center; 
+            /* 爽やかなグラデーションと波状の装飾 */
+            background: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            color: white; 
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* clamp関数による文字サイズ自動調整（崩れ防止） */
+        .hero h1 { 
+            font-size: clamp(20px, 6vw, 28px); 
+            margin-bottom: 15px; 
+            line-height: 1.4; 
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero p { 
+            font-size: clamp(14px, 4vw, 18px);
+            opacity: 0.9; 
+            margin: 0;
+        }
+
+        /* --- コンテンツエリア --- */
+        .content { 
+            padding: 30px 15px; 
+        }
+
+        /* リボン風の見出し装飾 */
+        .section-title { 
+            font-size: clamp(18px, 5vw, 22px);
+            text-align: center;
+            margin-bottom: 30px; 
+            padding: 10px;
+            background: var(--light-blue);
+            color: var(--main-blue);
+            border-left: 8px solid var(--main-blue);
+            font-weight: bold;
+            position: relative;
+        }
+
+        /* 特徴カードのリッチ化 */
+        .feature-card { 
+            background: #fff; 
+            border: 2px solid var(--light-blue); 
+            padding: 20px; 
+            border-radius: 15px; 
+            margin-bottom: 20px; 
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .feature-card::before {
+            content: "CHECK";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--accent-orange);
+            color: white;
+            font-size: 10px;
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        .feature-card h2 { 
+            margin-top: 0; 
+            font-size: 18px; 
+            color: var(--main-blue); 
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .price-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .price-item {
+            flex: 1;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+
+        .price-label { font-size: 12px; color: #666; }
+        .price-value { font-size: 16px; font-weight: bold; color: #e60012; }
+
+        /* --- CTAエリア --- */
+        .cta-area { 
+            text-align: center; 
+            padding: 40px 15px; 
+            background: #fff9f0; 
+            border-top: 5px solid var(--accent-orange);
+        }
+
+        .ad-container { 
+            margin: 20px auto; 
+            max-width: 300px;
+        }
+
+        .ad-container img { 
+            width: 100% !important; 
+            height: auto !important; 
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .cta-msg {
+            font-weight: bold;
+            font-size: clamp(16px, 5vw, 20px);
+            color: #d35400;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 2px solid #d35400;
+            border-radius: 50px;
+            margin-bottom: 15px;
+        }
+
+        /* --- フッター --- */
+        footer { 
+            background: #f2f2f2; 
+            color: #777; 
+            text-align: center; 
+            padding: 30px 15px; 
+            font-size: 11px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>九州のプロバイダーならBBIQ（ビビック）</header>
+
+    <section class="hero">
+        <h1>九州限定！高速光回線で<br>最大30,000円還元</h1>
+        <p>九州電力ユーザーなら、もっと安くなる。</p>
+    </section>
+
+    <div class="content">
+        <div class="section-title">BBIQが選ばれる理由</div>
+        
+        <div class="feature-card">
+            <h2>超豪華キャッシュバック</h2>
+            <p>当サイトからのお申込み限定！最大30,000円のキャッシュバックで、おトクにネットライフを始められます。</p>
+        </div>
+
+        <div class="feature-card">
+            <h2>auスマホ・九電とセットでおトク</h2>
+            <p>auスマートバリュー対応でスマホ代が割引！さらに九州電力ユーザーなら、BBIQの月額料金も永年割引対象です。</p>
+        </div>
+
+        <div class="price-box">
+            <div class="price-item">
+                <div class="price-label">集合住宅</div>
+                <div class="price-value">3,300円〜</div>
+            </div>
+            <div class="price-item">
+                <div class="price-label">戸建住宅</div>
+                <div class="price-value">4,070円〜</div>
+            </div>
+        </div>
+    </div>
+
+    <section class="cta-area">
+        <div class="cta-msg">＼ 九州の快適ネットライフへ ／</div>
+        
+        <div class="ad-container">
+            <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EJXH4I+42Y0+NWC81" rel="nofollow">
+            <img border="0" width="300" height="250" alt="" src="https://www24.a8.net/svt/bgt?aid=250507870880&wid=001&eno=01&mid=s00000019044004014000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=45593Y+EJXH4I+42Y0+NWC81" alt="">
+        </div>
+
+        <p style="font-size: 13px; color: #888;">※バナーをタップしてキャンペーン詳細へ</p>
+    </section>
+
+    <footer>
+        <p>※本ページはプロモーションを含みます。</p>
+        <p>Copyright © 2026 九州の光回線比較ガイド All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
