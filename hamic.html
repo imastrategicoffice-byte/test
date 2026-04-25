@@ -2,77 +2,222 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【公式】Hamic MIELS - iFaceのHameeが贈る、新しいキッズスマホ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Hamic MIELS - はじめてのファーストスマホ</title>
     <style>
-        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; line-height: 1.8; color: #333; margin: 0; padding: 0; background-color: #fdfdfd; }
-        .container { max-width: 600px; margin: 0 auto; background: #fff; box-shadow: 0 0 20px rgba(0,0,0,0.05); }
-        header { background: #5bc0de; color: #fff; padding: 15px; text-align: center; font-weight: bold; font-size: 14px; }
-        .hero { padding: 40px 20px; text-align: center; background: linear-gradient(to bottom, #ffffff, #f0faff); }
-        .hero h2 { font-size: 22px; color: #2c3e50; margin-bottom: 10px; line-height: 1.4; }
-        .hero p { font-size: 16px; color: #5a6268; }
-        .feature-section { padding: 30px 20px; }
-        .section-title { font-size: 19px; border-bottom: 3px solid #5bc0de; padding-bottom: 8px; margin-bottom: 25px; font-weight: bold; color: #2c3e50; display: inline-block; }
-        .point-box { background: #fff; border: 1px solid #e1e8ed; padding: 20px; border-radius: 15px; margin-bottom: 20px; position: relative; }
-        .point-box h3 { margin-top: 0; font-size: 17px; color: #3498db; margin-bottom: 10px; }
-        .point-box p { font-size: 14px; margin: 0; color: #666; }
-        .badge { background: #ff7f50; color: white; padding: 2px 10px; border-radius: 20px; font-size: 12px; margin-right: 8px; }
-        .cta-area { text-align: center; padding: 40px 20px; background: #fff8f0; border-top: 1px dashed #5bc0de; }
-        .ad-container img { max-width: 100%; height: auto; border: none; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        footer { background: #f4f4f4; color: #888; text-align: center; padding: 20px; font-size: 11px; }
+        /* --- 人間工学・物理的見切れ根絶スペック --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* html背景色をヘッダー最上部と同期 */
+        html { background-color: #f7941d; overflow-x: hidden; }
+        
+        body { 
+            width: 100%; 
+            background-color: #f4f7f4; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
+            color: #333; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+
+        .lp-container { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            min-height: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ヘッダー：iFaceブランドを彷彿とさせるアクティブなオレンジグラデーション */
+        header { 
+            background: linear-gradient(180deg, #f7941d 0%, #ffb347 100%); 
+            color: #fff; 
+            /* OSバー回避設定 */
+            padding: calc(100px + env(safe-area-inset-top)) 20px 60px; 
+            text-align: center; 
+            clip-path: ellipse(150% 100% at 50% 0%); 
+        }
+
+        header .brand-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: bold;
+        }
+
+        header h1 { 
+            /* 全テキスト改行最適化 */
+            font-size: clamp(1.2rem, 6vw, 1.7rem); 
+            font-weight: bold; 
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .content { padding: 40px 20px 10px; }
+
+        /* 視覚的リズムを作る強調ヘッドライン */
+        .headline { 
+            background: #fff9f0; 
+            color: #f7941d; 
+            font-weight: bold; 
+            padding: 15px; 
+            text-align: center; 
+            border: 2px solid #f7941d; 
+            border-radius: 12px; 
+            margin-bottom: 35px;
+            font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        /* カードデザイン：左アクセントボーダーによる視覚誘導 */
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #eaeaea; 
+            border-radius: 15px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+            border-left: 8px solid #f7941d; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .card b { 
+            color: #1a1a1a; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 1.1rem; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .card p { 
+            font-size: 0.95rem; 
+            color: #555; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .highlight { color: #d0021b; font-weight: bold; }
+
+        /* CTAセクション */
+        .cta-section { 
+            background: #fafafa; 
+            text-align: center; 
+            padding: 40px 15px 60px; 
+            border-top: 1px solid #eee; 
+        }
+
+        .cta-label { 
+            font-weight: bold; 
+            color: #333; 
+            margin-bottom: 25px; 
+            display: inline-block; 
+            font-size: clamp(1rem, 5vw, 1.2rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        
+        .arrow-anim {
+            display: block;
+            font-size: 1.6rem;
+            color: #f7941d;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .ad-container { 
+            width: 100%; 
+            max-width: 300px; 
+            margin: 0 auto; 
+            line-height: 0; 
+            filter: drop-shadow(0 12px 24px rgba(0,0,0,0.15)); 
+        }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; border-radius: 10px; }
+
+        .note {
+            font-size: 0.75rem;
+            color: #888;
+            padding: 25px 20px;
+            background: #fff;
+            line-height: 1.5;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        footer { 
+            background: #333333; 
+            color: #fff; 
+            padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); 
+            font-size: 0.75rem; 
+        }
+        .footer-line1 { opacity: 0.7; margin-bottom: 10px; display: block; }
+        .footer-line2 { font-weight: bold; text-align: right; display: block; }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>iFaceのメーカーHameeが開発した「ファーストスマホ」</header>
-
-    <section class="hero">
-        <h2>「いってきます」を安心に。<br>子どもの自立を支えるスマホ</h2>
-        <p>Hamic MIELS（はみっく ミエルス）</p>
-    </section>
-
-    <div class="feature-section">
-        <div class="section-title">パパ・ママが安心できる4つの特徴</div>
+<div class="lp-container">
+    <header>
+        <span class="brand-label">iFaceのHameeが開発</span>
+        <h1>子供に初めて与える<br>ファーストスマホ「Hamic」</h1>
+    </header>
+    <div class="content">
+        <div class="headline">親子の安心を形に。Hamic MIELSの4つの特徴</div>
         
-        <div class="point-box">
-            <h3><span class="badge">特徴1</span>子どもの位置が「常に」わかる</h3>
-            <p>GPSとBLビーコンのハイブリッド見守り。電池が切れても位置を把握でき、特定の場所への出入りもスマホに通知が届きます。</p>
+        <div class="card">
+            <b>電池切れでも<span class="highlight">位置がわかる</span></b>
+            <p>GPSとBLビーコンのハイブリッドで見守り。電源が切れても場所を特定でき、特定の場所への出入りも通知します。</p>
         </div>
 
-        <div class="point-box">
-            <h3><span class="badge">特徴2</span>録音機能付き防犯ブザー</h3>
-            <p>ブザーを引くと位置情報を即座に送信。周囲の状況を録音し、犯罪企図者を牽制するモードと、静かに助けを呼ぶモードを搭載。</p>
+        <div class="card">
+            <b>録音機能付き<span class="highlight">防犯ブザー</span></b>
+            <p>ブザーを鳴らすと位置情報と周辺音を親に通知。犯罪を抑止するモードと静かに助けを求めるモードを搭載しています。</p>
         </div>
 
-        <div class="point-box">
-            <h3><span class="badge">特徴3</span>見守れる専用メッセージアプリ</h3>
-            <p>SNSいじめやITリテラシーの不安も解消。親がやりとりを見守れる専用アプリで、安全にコミュニケーションを学べます。</p>
+        <div class="card">
+            <b>親が<span class="highlight">見守れる</span>専用アプリ</b>
+            <p>専用メッセージアプリでSNSいじめを防止。親がやりとりを見守ることでITリテラシーを安全に学べます。</p>
         </div>
 
-        <div class="point-box">
-            <h3><span class="badge">特徴4</span>愛着が持てる自由なデザイン</h3>
-            <p>親の許可制でGoogle Playのアプリも利用可能。iFaceで培われたデザイン性で、自分だけのケースも自由に作れます。</p>
+        <div class="card">
+            <b>自由な<span class="highlight">ケースデザイン</span></b>
+            <p>Google Playからアプリの追加も可能。自分だけのデザインケースで、子供が愛着を持って楽しく使えます。</p>
         </div>
     </div>
 
-    <section class="cta-area">
-        <p style="font-weight: bold; margin-bottom: 20px; color: #2c3e50;">＼ 公式サイトで詳細・ご購入はこちら ／</p>
-        
-        <div class="ad-container" style="margin-bottom: 20px;">
+    <div class="cta-section">
+        <span class="cta-label">＼ お子さまの安全と成長のために ／</span>
+        <span class="arrow-anim">▼</span>
+        <div class="ad-container">
             <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCG+757A42+XTI+ZUAM9" rel="nofollow">
-            <img border="0" width="300" height="250" alt="" src="https://www26.a8.net/svt/bgt?aid=260324080432&wid=001&eno=01&mid=s00000004383006020000&mc=1"></a>
+            <img border="0" width="300" height="250" alt="Hamic MIELS 公式" src="https://www28.a8.net/svt/bgt?aid=260324080432&wid=001&eno=01&mid=s00000004383006020000&mc=1"></a>
             <img border="0" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4AZNCG+757A42+XTI+ZUAM9" alt="">
         </div>
+    </div>
 
-        <p style="font-size: 13px; color: #888;">※バナー画像をクリックして公式サイトへ</p>
-    </section>
+    <div class="note">
+        ※キッズスマホHamicおよびサイト内全商品が対象です。幼稚園、小中学生の保護者様に選ばれています。詳細は公式サイトをご確認ください。
+    </div>
 
     <footer>
-        <p>※本ページはプロモーションを含みます。</p>
-        <p>Copyright © 2026 キッズスマホ見守りガイド All Rights Reserved.</p>
+        <span class="footer-line1">※本ページはプロモーションを含みます。</span>
+        <span class="footer-line2">&copy; 2026 Hamic 戦略的キッズ防犯ガイド</span>
     </footer>
 </div>
-
 </body>
 </html>
