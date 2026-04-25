@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Lyprimo（リプリモ） - 即日利用可能なプリペイド携帯</title>
     <style>
-        /* --- 1. 横揺れ・見切れの根絶スペック --- */
+        /* --- 全テキスト収容・改行最適化スペック --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        /* html背景色をヘッダー主色と同期し、上部の白飛びを封鎖 */
         html { background-color: #d11212; overflow-x: hidden; }
         
         body { 
@@ -16,8 +15,8 @@
             background-color: #f8f9fa; 
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
             color: #333; 
-            line-height: 1.4; 
-            overflow-x: hidden; /* 1pxの横揺れも許さない */
+            line-height: 1.6; 
+            overflow-x: hidden;
         }
 
         .lp-container { 
@@ -26,41 +25,39 @@
             margin: 0 auto; 
             background: #ffffff; 
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
-            min-height: auto; /* PC表示の最適化：コンテンツに応じた高さ */
+            min-height: auto;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
         }
 
-        /* --- 2. ヘッダー：スマホの見切れを物理回避 --- */
         header { 
             background: linear-gradient(135deg, #d11212, #f03e3e); 
             color: #fff; 
-            /* 文字を確実に安全圏へ押し下げる厚いパディング */
-            padding: calc(100px + env(safe-area-inset-top)) 15px 45px; 
+            padding: calc(95px + env(safe-area-inset-top)) 15px 45px; 
             text-align: center; 
-            width: 100%;
         }
 
         header h1 { 
-            /* 1行死守：画面枠を絶対に破壊させないclamp設定 */
-            font-size: clamp(0.5rem, 5vw, 1.3rem); 
+            /* タイトル改行・収容最適化 */
+            font-size: clamp(1.1rem, 5.5vw, 1.5rem); 
             font-weight: bold; 
-            white-space: nowrap; 
-            line-height: 1.2;
-            display: block;
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
         }
 
-        /* --- 3. コンテンツ：PCでのスカスカ感を解消 --- */
-        .content { 
-            padding: 25px 20px 10px; 
-        }
+        .content { padding: 25px 20px 10px; }
 
         .headline { 
             background: #fff0f0; color: #d11212; font-weight: bold; 
             padding: 12px; text-align: center; border-bottom: 3px solid #d11212; 
             margin-bottom: 25px;
-            font-size: clamp(0.5rem, 5vw, 1.1rem); white-space: nowrap; 
+            font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+            /* 文面の見切れ・変な改行を防止 */
+            word-break: break-word;
+            overflow-wrap: anywhere;
         }
 
         .card { 
@@ -68,32 +65,32 @@
             padding: 18px; margin-bottom: 18px; 
             border-left: 5px solid #d11212; 
         }
-        .card b { color: #d11212; display: block; margin-bottom: 6px; font-size: 1rem; }
-        .card p { font-size: 0.85rem; color: #555; }
+        .card b { 
+            color: #d11212; display: block; margin-bottom: 6px; font-size: 1rem; 
+            word-break: break-word;
+        }
+        .card p { 
+            font-size: 0.85rem; color: #555; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
 
-        /* --- 4. CTA：バナー位置の適正化 --- */
         .cta-section { 
             background: #fff; 
             text-align: center; 
-            padding: 30px 10px 40px; 
+            padding: 20px 10px 40px; 
             border-top: 1px solid #eee; 
-            margin-top: 0; /* 不要な下部空白を排除 */
         }
 
         .cta-label { 
-            font-weight: bold; color: #333; margin-bottom: 20px; display: inline-block; 
-            font-size: clamp(0.5rem, 5vw, 1.05rem); white-space: nowrap; 
+            font-weight: bold; color: #333; margin-bottom: 15px; display: inline-block; 
+            font-size: clamp(0.9rem, 4.8vw, 1.1rem);
+            word-break: break-word;
         }
 
-        .ad-container { 
-            width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; font-size: 0; 
-        }
-        .ad-container img { 
-            width: 100% !important; height: auto !important; 
-            display: block !important; border: none; 
-        }
+        .ad-container { width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; }
 
-        /* --- 5. フッター --- */
         footer { 
             background: #333; color: #fff; 
             padding: 20px 20px calc(25px + env(safe-area-inset-bottom)); 
