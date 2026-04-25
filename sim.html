@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>だれでもモバイル - 審査不要の音声SIM</title>
     <style>
-        /* --- 収容・空白の完全最適化スペック --- */
+        /* --- 1. 基本設定：スマホとPCの表示を完全分離 --- */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
+        /* スマホ上部の白飛びを背景色で封鎖 */
         html { background-color: #005bac; }
         
         body { 
@@ -15,7 +16,7 @@
             background-color: #f4f7f9; 
             font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
             color: #333; 
-            line-height: 1.5;
+            line-height: 1.4; 
         }
 
         .lp-container { 
@@ -23,18 +24,17 @@
             max-width: 500px; 
             margin: 0 auto; 
             background: #ffffff; 
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
             box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            /* PCでの縦長すぎる余白を解消：高さをコンテンツに合わせる */
+            min-height: auto; 
         }
 
-        /* ヘッダー：文字の見切れを物理的に回避 */
+        /* --- 2. ヘッダー：スマホの見切れを物理回避（パディング強化） --- */
         header { 
             background: linear-gradient(135deg, #005bac, #0076e4); 
             color: #fff; 
-            /* 上部に十分な余白を確保し、システムバーとの衝突を避ける */
-            padding: calc(60px + env(safe-area-inset-top)) 15px 40px; 
+            /* 上部余白を大幅に確保して文字を押し下げる */
+            padding: calc(75px + env(safe-area-inset-top)) 15px 40px; 
             text-align: center; 
         }
 
@@ -46,39 +46,39 @@
             line-height: 1.2;
         }
 
-        /* コンテンツ：PCでの間延びを解消 */
+        /* --- 3. コンテンツ：PCでのスカスカ感を解消 --- */
         .content { 
-            padding: 30px 20px; 
-            flex-grow: 1; /* ここで余白を調整 */
+            padding: 20px 20px 10px; 
         }
 
         .headline { 
             background: #fff4f4; color: #e60012; font-weight: bold; 
-            padding: 12px; text-align: center; border-bottom: 3px solid #e60012; 
-            margin-bottom: 30px;
-            font-size: clamp(0.5rem, 5vw, 1.15rem); white-space: nowrap; 
+            padding: 10px; text-align: center; border-bottom: 3px solid #e60012; 
+            margin-bottom: 20px;
+            font-size: clamp(0.5rem, 5vw, 1.1rem); white-space: nowrap; 
         }
 
         .card { 
-            background: #f9f9f9; border: 1px solid #eee; border-radius: 10px; 
-            padding: 20px; margin-bottom: 20px;
+            background: #f9f9f9; border: 1px solid #eee; border-radius: 8px; 
+            padding: 15px; margin-bottom: 15px; 
             border-left: 5px solid #005bac; 
         }
-        .card b { color: #005bac; display: block; margin-bottom: 8px; font-size: 1rem; }
-        .card p { font-size: 0.9rem; color: #555; }
+        .card b { color: #005bac; display: block; margin-bottom: 4px; font-size: 0.95rem; }
+        .card p { font-size: 0.85rem; color: #555; }
 
-        /* CTA：PC・スマホ両方で自然な位置に配置 */
+        /* --- 4. CTA：バナー位置の適正化 --- */
         .cta-section { 
             background: #fdfdfd; 
             text-align: center; 
-            padding: 40px 10px; 
+            padding: 20px 10px 30px; 
             border-top: 1px solid #eee; 
-            /* margin-top: auto を削除し、間延びを防止 */
+            /* 縦に間延びさせない設定 */
+            margin-top: 0; 
         }
 
         .cta-label { 
-            font-weight: bold; color: #333; margin-bottom: 20px; display: inline-block; 
-            font-size: clamp(0.5rem, 5.5vw, 1.15rem); white-space: nowrap; 
+            font-weight: bold; color: #333; margin-bottom: 15px; display: inline-block; 
+            font-size: clamp(0.5rem, 5.5vw, 1.05rem); white-space: nowrap; 
         }
 
         .ad-container { 
@@ -89,14 +89,14 @@
             display: block !important; border: none; 
         }
 
-        /* フッター */
+        /* --- 5. フッター --- */
         footer { 
             background: #333; color: #fff; 
-            padding: 20px 20px calc(30px + env(safe-area-inset-bottom)); 
-            font-size: 0.75rem; line-height: 1.8; 
+            padding: 15px 20px calc(20px + env(safe-area-inset-bottom)); 
+            font-size: 0.7rem; line-height: 1.6; 
         }
         .footer-line1 { text-align: left; display: block; }
-        .footer-line2 { text-align: right; display: block; opacity: 0.8; }
+        .footer-line2 { text-align: right; display: block; opacity: 0.7; }
     </style>
 </head>
 <body>
