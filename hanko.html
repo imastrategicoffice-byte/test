@@ -2,199 +2,83 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【公式】はんこdeハンコ - 高品質・激安印鑑を即日出荷</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>【公式】はんこdeハンコ - 高品質・最短即日出荷</title>
     <style>
-        /* 全体の基本設定 */
-        body { 
-            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
-            line-height: 1.8; 
-            color: #333; 
-            margin: 0; 
-            padding: 0; 
-            background-color: #fdfaf5; 
+        /* 全体最適化 */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html, body { width: 100%; background-color: #f7f7f7; overflow-x: hidden; }
+        body { font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', sans-serif; color: #333; line-height: 1.6; }
+        .lp-container { max-width: 800px; margin: 0 auto; background: #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        
+        /* ヘッダー：和風の赤を基調 */
+        header { background: linear-gradient(135deg, #a40000, #d40000); color: #fff; padding: 40px 15px; text-align: center; }
+        header h1 { font-size: clamp(1.1rem, 5vw, 1.8rem); font-weight: bold; line-height: 1.4; }
+        
+        /* スマホ1行死守：プロモーションバナー */
+        .promo-banner { 
+            background: #fff0f0; color: #a40000; text-align: center; padding: 12px 10px; font-weight: bold; border-bottom: 2px solid #a40000; 
+            font-size: clamp(0.7rem, 3.8vw, 1.1rem); 
+            white-space: nowrap;
         }
-        .container { 
-            max-width: 600px; 
-            margin: 0 auto; 
-            background: #fff; 
-            padding-bottom: 40px;
-        }
-        header { 
-            background: #8e0000; 
-            color: #fff; 
-            padding: 15px; 
-            text-align: center; 
-            font-weight: bold; 
-            font-size: 14px; 
-        }
-        /* ヒーローエリア */
-        .hero { 
-            padding: 40px 20px; 
-            text-align: center; 
-            background: linear-gradient(135deg, #a90000 0%, #8e0000 100%); 
-            color: white; 
-        }
-        .hero h1 { 
-            font-size: 22px; 
-            margin-bottom: 15px; 
-            line-height: 1.4; 
-        }
-        .hero p { 
-            font-size: 16px; 
-            opacity: 0.9; 
-            margin: 0;
-        }
+        
         /* コンテンツ */
-        .content { 
-            padding: 25px 15px; 
+        .content { padding: 30px 20px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 30px; }
+        .card { background: #fff; border: 1px solid #eee; border-radius: 12px; padding: 20px; border-top: 5px solid #a40000; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+        .card b { color: #a40000; display: block; margin-bottom: 10px; font-size: 1.1rem; }
+        
+        /* CTAセクション：スマホ1行死守 */
+        .cta-section { background: #fdfdfd; text-align: center; border-top: 1px solid #eee; padding: 40px 15px; }
+        .cta-label { 
+            font-weight: bold; color: #d35400; margin-bottom: 20px; display: inline-block; 
+            font-size: clamp(0.8rem, 4.5vw, 1.3rem); 
+            white-space: nowrap;
         }
-        .section-title { 
-            font-size: 20px; 
-            text-align: center;
-            margin-bottom: 25px; 
-            font-weight: bold; 
-            color: #8e0000;
-            border-bottom: 2px solid #8e0000;
-            display: inline-block;
-            width: 100%;
-            padding-bottom: 10px;
-        }
-        /* 3つの安心ポイント */
-        .service-points {
-            display: flex;
-            justify-content: space-around;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .point-item {
-            flex: 1;
-            font-size: 13px;
-            font-weight: bold;
-            color: #8e0000;
-        }
-        .point-icon {
-            font-size: 24px;
-            display: block;
-            margin-bottom: 5px;
-        }
-        /* 特徴カード */
-        .card { 
-            background: #fff; 
-            border: 1px solid #e0e0e0; 
-            padding: 18px; 
-            border-radius: 8px; 
-            margin-bottom: 15px; 
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .card h2 { 
-            margin-top: 0; 
-            font-size: 18px; 
-            color: #333; 
-            margin-bottom: 10px;
-        }
-        .card p { 
-            font-size: 15px; 
-            margin: 0; 
-            color: #555;
-        }
-        /* 人気アイテム紹介 */
-        .pickup-box {
-            background: #fff9f0;
-            border: 1px solid #ffedcc;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 20px 0;
-        }
-        .pickup-box h3 {
-            font-size: 17px;
-            margin-top: 0;
-            color: #d35400;
-        }
-        /* CTAエリア */
-        .cta-area { 
-            text-align: center; 
-            padding: 40px 20px; 
-            background: #fdf2f2; 
-            border-radius: 20px;
-            margin: 20px 15px;
-        }
-        .ad-container { 
-            margin: 20px 0; 
-        }
-        .ad-container img { 
-            max-width: 100% !important; 
-            height: auto !important; 
-            border: 1px solid #ddd;
-        }
-        .cta-msg {
-            font-weight: bold;
-            font-size: 18px;
-            color: #8e0000;
-            margin-bottom: 15px;
-        }
-        /* フッター */
-        footer { 
-            background: #f2f2f2; 
-            color: #777; 
-            text-align: center; 
-            padding: 30px 20px; 
-            font-size: 11px; 
+        
+        /* 広告コンテナ */
+        .ad-container { width: 100%; max-width: 300px; margin: 0 auto; line-height: 0; position: relative; }
+        .ad-container a { display: block; }
+        .ad-container img { width: 100% !important; height: auto !important; border: 1px solid #ddd; }
+        
+        /* 計測用ピクセルの完全隔離 */
+        .tracking-pixel { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+        
+        /* フッター：注釈の改行防止 */
+        footer { background: #333; color: #fff; text-align: center; padding: 30px 10px; font-size: 0.75rem; }
+        .footer-note { 
+            display: block; font-size: clamp(0.55rem, 3vw, 0.75rem); 
+            white-space: nowrap; margin-bottom: 5px; 
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <header>高品質・激安のはんこ通販「はんこdeハンコ」</header>
-
-    <section class="hero">
-        <h1>新生活・起業を応援！<br>一生モノの印鑑を激安価格で</h1>
-        <p>10年保証・即日出荷・送料無料で安心</p>
-    </section>
-
+<div class="lp-container">
+    <header><h1>印鑑・はんこの作成なら<br>はんこdeハンコへ</h1></header>
+    <div class="promo-banner">＼ 高品質な印鑑を最短即日出荷・10年保証 ／</div>
+    
     <div class="content">
-        <div class="service-points">
-            <div class="point-item"><span class="point-icon">🛡️</span>10年保証</div>
-            <div class="point-item"><span class="point-icon">🚀</span>即日出荷</div>
-            <div class="point-item"><span class="point-icon">🚚</span>送料無料</div>
-        </div>
-
-        <div class="section-title">はんこdeハンコが選ばれる理由</div>
-        
-        <div class="card">
-            <h2>高品質なのに激安価格</h2>
-            <p>個人向けの認印・実印から、法人向けの代表印まで幅広くラインナップ。職人品質の印鑑を、通販ならではの低価格で提供します。</p>
-        </div>
-
-        <div class="card">
-            <h2>あらゆるシーンに対応</h2>
-            <p>新社会人の準備、成人祝い、結婚のお祝い、さらには会社設立や起業など、人生の重要な節目にふさわしい一本が見つかります。</p>
-        </div>
-
-        <div class="pickup-box">
-            <h3>⛳️ ゴルフ好きに大人気！</h3>
-            <p style="font-size: 15px; margin: 5px 0 0 0;">自分のボールがひと目でわかる「マイボールスタンプ」も絶賛販売中！プレゼントにも最適です。</p>
+        <div class="feature-grid">
+            <div class="card"><b>熟練の職人仕上げ</b><p>一本一本丁寧に作成。実印・銀行印など、人生の節目にふさわしい品質をお届けします。</p></div>
+            <div class="card"><b>圧倒的なスピード対応</b><p>急な必要時も安心。平日14時までの注文で即日出荷。全国へ迅速にお届けします。</p></div>
+            <div class="card"><b>安心の10年保証</b><p>長くお使いいただくために。万が一の破損や摩耗にも対応する手厚い保証体制。</p></div>
         </div>
     </div>
-
-    <section class="cta-area">
-        <div class="cta-msg">＼ 豊富な書体と素材をチェック ／</div>
-        
+    
+    <div class="cta-section">
+        <span class="cta-label">＼ Web限定価格でお得に作成 ／</span>
         <div class="ad-container">
-            <a href="https://px.a8.net/svt/ejp?a8mat=4AV44C+4OHOZ6+2DS2+601S1" rel="nofollow">
-            <img border="0" width="125" height="125" alt="" src="https://www24.a8.net/svt/bgt?aid=260112540283&wid=001&eno=01&mid=s00000011117001008000&mc=1"></a>
-            <img border="0" width="1" height="1" src="https://www19.a8.net/0.gif?a8mat=4AV44C+4OHOZ6+2DS2+601S1" alt="">
+            <a href="https://px.a8.net/svt/ejp?a8mat=453S74+BM8A02+4E9U+639IP" rel="nofollow">
+            <img border="0" width="300" height="250" alt="" src="https://www22.a8.net/svt/bgt?aid=250424687595&wid=001&eno=01&mid=s00000020584001024000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=453S74+BM8A02+4E9U+639IP" class="tracking-pixel" alt="">
         </div>
-
-        <p style="font-size: 13px; color: #888;">※バナーをタップして公式サイトへ移動します</p>
-    </section>
-
+    </div>
+    
     <footer>
-        <p>※本ページはプロモーションを含みます。</p>
-        <p>Copyright © 2026 印鑑・はんこ選びのガイド All Rights Reserved.</p>
+        <span class="footer-note">※サービスの詳細・最新情報は公式サイトにてご確認ください。</span>
+        <span class="footer-note">※本ページはプロモーションを含みます。</span>
+        <p>&copy; 2026 IMA Strategic Office</p>
     </footer>
 </div>
-
 </body>
 </html>
