@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【Sirusi】自分だけのデザイン印鑑 - 暮らしに印をデザインする</title>
+    <style>
+        /* 全体の基本設定 */
+        body { 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif; 
+            line-height: 1.8; 
+            color: #333; 
+            margin: 0; 
+            padding: 0; 
+            background-color: #fafafa; 
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: #fff; 
+            padding-bottom: 40px;
+        }
+        header { 
+            background: #222; 
+            color: #fff; 
+            padding: 15px; 
+            text-align: center; 
+            font-weight: bold; 
+            font-size: 14px; 
+            letter-spacing: 0.1em;
+        }
+        /* ヒーローエリア */
+        .hero { 
+            padding: 50px 20px; 
+            text-align: center; 
+            background: linear-gradient(135deg, #444 0%, #111 100%); 
+            color: white; 
+        }
+        .hero h1 { 
+            font-size: 22px; 
+            margin-bottom: 15px; 
+            line-height: 1.6; 
+            font-weight: normal;
+        }
+        .hero span {
+            color: #d4af37; /* ゴールド系 */
+            font-weight: bold;
+        }
+        /* コンテンツエリア */
+        .content { 
+            padding: 30px 15px; 
+        }
+        .section-title { 
+            font-size: 19px; 
+            text-align: center;
+            margin-bottom: 30px; 
+            color: #222;
+            position: relative;
+            display: block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 2px;
+            background: #d4af37;
+            margin: 10px auto 0;
+        }
+        /* ブランドメッセージ */
+        .brand-box {
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 4px;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+        .brand-box p {
+            font-size: 16px;
+            margin: 0;
+            color: #555;
+        }
+        /* メリット・特徴 */
+        .feature {
+            margin-bottom: 30px;
+        }
+        .feature h2 {
+            font-size: 18px;
+            color: #111;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .feature h2::before {
+            content: "■";
+            color: #d4af37;
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        .feature p {
+            font-size: 15px;
+            color: #666;
+            margin: 0;
+        }
+        /* ガイド・比較エリア */
+        .guide-area {
+            background: #f9f6f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .guide-area h3 {
+            font-size: 17px;
+            margin-top: 0;
+            color: #444;
+        }
+        /* CTA（バナー）エリア */
+        .cta-area { 
+            text-align: center; 
+            padding: 40px 20px; 
+            background: #f4f4f4; 
+            border-radius: 10px;
+            margin: 20px 15px;
+        }
+        .ad-container { 
+            margin: 20px 0; 
+        }
+        .ad-container img { 
+            max-width: 100% !important; 
+            height: auto !important; 
+            border: 1px solid #ccc;
+        }
+        .cta-label {
+            font-weight: bold;
+            font-size: 17px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        /* フッター */
+        footer { 
+            background: #eee; 
+            color: #888; 
+            text-align: center; 
+            padding: 30px 20px; 
+            font-size: 11px; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>DESIGN YOUR MARK | Sirusi</header>
+
+    <section class="hero">
+        <h1>印鑑をデザインする。<br><span>見せびらかしたくなる</span><br>特別な一本。</h1>
+        <p>自分らしさを刻む、唯一無二のデザイン印鑑</p>
+    </section>
+
+    <div class="content">
+        <h2 class="section-title">印鑑は、個性を表す道具。</h2>
+        
+        <div class="brand-box">
+            <p>誰もが知る暮らしの道具だからこそ、<br>こだわりを持って選びたい。</p>
+        </div>
+
+        <div class="feature">
+            <h2>高い成約率が証明する満足度</h2>
+            <p>単なる「事務用品」ではなく「一生モノのパートナー」として。材質、サイズ、書体まで、用途に合わせた最適なご案内をいたします。</p>
+        </div>
+
+        <div class="feature">
+            <h2>選ぶ楽しさ、作る喜び</h2>
+            <p>何をどう比較し、どう選べばいいのか。専門の印鑑ガイドが、あなたの「背中を押す」お手伝いをします。</p>
+        </div>
+
+        <div class="guide-area">
+            <h3>自分にぴったりの一本を</h3>
+            <p style="font-size: 14px; color: #777; margin: 0;">実印、銀行印、認印。それぞれの役割に合わせたデザインで、暮らしに彩りを。Sirusiは、あなたの新しい「印」を創り上げます。</p>
+        </div>
+    </div>
+
+    <section class="cta-area">
+        <div class="cta-label">▼ デザイン印鑑のラインナップを見る ▼</div>
+        
+        <div class="ad-container">
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AV44C+4G5MIA+4SD0+5ZEMP" rel="nofollow">
+            <img border="0" width="125" height="125" alt="" src="https://www23.a8.net/svt/bgt?aid=260112540269&wid=001&eno=01&mid=s00000022338001005000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4AV44C+4G5MIA+4SD0+5ZEMP" alt="">
+        </div>
+
+        <p style="font-size: 12px; color: #999;">※画像タップで公式サイトへ移動します</p>
+    </section>
+
+    <footer>
+        <p>※本ページはプロモーションを含みます。</p>
+        <p>Copyright © 2026 デザイン印鑑選びのコンシェルジュ All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
