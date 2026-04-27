@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>MANOMA（マノマ）- ソニーのスマートホームサービス</title>
+    <style>
+        /* --- 人間工学・物理的見切れ根絶スペック --- */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        /* html背景色をヘッダー最上部と同期 */
+        html { background-color: #000000; overflow-x: hidden; }
+        
+        body { 
+            width: 100%; 
+            background-color: #f4f7f4; 
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; 
+            color: #333; 
+            line-height: 1.6; 
+            overflow-x: hidden;
+        }
+
+        .lp-container { 
+            width: 100%; 
+            max-width: 500px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            min-height: auto;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ヘッダー：SONYブランドの信頼感を象徴するモダンブラック */
+        header { 
+            background: linear-gradient(180deg, #000000 0%, #333333 100%); 
+            color: #fff; 
+            padding: calc(100px + env(safe-area-inset-top)) 20px 60px; 
+            text-align: center; 
+            clip-path: ellipse(150% 100% at 50% 0%); 
+        }
+
+        header .brand-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.1rem;
+            opacity: 0.9;
+            margin-bottom: 12px;
+            display: block;
+            font-weight: bold;
+        }
+
+        header h1 { 
+            font-size: clamp(1.2rem, 6vw, 1.7rem); 
+            font-weight: bold; 
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        .content { padding: 40px 20px 10px; }
+
+        .headline { 
+            background: #fff; 
+            color: #333; 
+            font-weight: bold; 
+            padding: 15px; 
+            text-align: center; 
+            border: 2px solid #333; 
+            border-radius: 12px; 
+            margin-bottom: 35px;
+            font-size: clamp(0.9rem, 4.5vw, 1.1rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        /* カードデザイン：左アクセントボーダー */
+        .card { 
+            background: #ffffff; 
+            border: 1px solid #eaeaea; 
+            border-radius: 15px; 
+            padding: 22px; 
+            margin-bottom: 20px; 
+            border-left: 8px solid #000; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .card b { 
+            color: #1a1a1a; 
+            display: block; 
+            margin-bottom: 8px; 
+            font-size: 1.1rem; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .card p { 
+            font-size: 0.95rem; 
+            color: #555; 
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        .highlight { color: #e60012; font-weight: bold; }
+
+        /* サンドイッチ構造：テキストリンクCTA */
+        .text-cta {
+            text-align: center;
+            margin: 10px 0 30px;
+            padding: 15px;
+        }
+        .text-cta a {
+            color: #0066cc;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 1.1rem;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+
+        /* CTAセクション */
+        .cta-section { 
+            background: #fafafa; 
+            text-align: center; 
+            padding: 40px 15px 60px; 
+            border-top: 1px solid #eee; 
+        }
+
+        .cta-label { 
+            font-weight: bold; 
+            color: #333; 
+            margin-bottom: 25px; 
+            display: inline-block; 
+            font-size: clamp(1rem, 5vw, 1.2rem);
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+        
+        .arrow-anim {
+            display: block;
+            font-size: 1.6rem;
+            color: #333;
+            margin-bottom: 10px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(8px); }
+        }
+
+        .ad-container { 
+            width: 100%; 
+            max-width: 300px; 
+            margin: 0 auto; 
+            line-height: 0; 
+        }
+        .ad-container img { width: 100% !important; height: auto !important; display: block !important; border: none; border-radius: 10px; }
+
+        .note {
+            font-size: 0.75rem;
+            color: #888;
+            padding: 25px 20px;
+            background: #fff;
+            line-height: 1.5;
+            word-break: break-word;
+            overflow-wrap: anywhere;
+            line-break: strict;
+        }
+
+        footer { 
+            background: #000; 
+            color: #fff; 
+            padding: 30px 20px calc(30px + env(safe-area-inset-bottom)); 
+            font-size: 0.75rem; 
+        }
+        .footer-line1 { opacity: 0.7; margin-bottom: 10px; display: block; }
+        .footer-line2 { font-weight: bold; text-align: right; display: block; }
+    </style>
+</head>
+<body>
+<div class="lp-container">
+    <header>
+        <span class="brand-label">ソニーのスマートホームサービス</span>
+        <h1>MANOMA（マノマ）で実現する<br>一歩先の安心と見守り</h1>
+    </header>
+    <div class="content">
+        <div class="headline">複数の機器とアプリが連携し、スマホで家族を見守る</div>
+        
+        <div class="card">
+            <b>セキュリティセット</b>
+            <p>最大3か月間 <span class="highlight">月額980円</span>でお試し可能。カメラとセンサーで異常を検知し、もしもの時はセコムが駆けつけます。</p>
+        </div>
+
+        <div class="card">
+            <b>親の見守りセット</b>
+            <p>日本在宅介護協会認定。離れて暮らす親御さまの外出状況や生活リズムをセンサーとカメラでスマホから確認できます。</p>
+        </div>
+
+        <div class="card">
+            <b>子ども見守りセット</b>
+            <p>お留守番中のお子さまと顔を見ながら通話可能。玄関の鍵の遠隔操作や家電の操作まで、スマホひとつで完結します。</p>
+        </div>
+
+        <div class="card">
+            <b>充実のサポート体制</b>
+            <p>初期設定は<span class="highlight">実質無料</span>で代行。最低利用期間や違約金もないため、手軽に高機能な防犯対策を始められます。</p>
+        </div>
+
+        <div class="text-cta">
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCG+7K348I+59J2+5YJRM" rel="nofollow">ソニーの防犯サービス MANOMA（マノマ）「セキュリティセット」</a>
+            <img border="0" width="1" height="1" src="https://www16.a8.net/0.gif?a8mat=4AZNCG+7K348I+59J2+5YJRM" alt="">
+        </div>
+    </div>
+
+    <div class="cta-section">
+        <span class="cta-label">＼ 公式サイトで詳しく見る ／</span>
+        <span class="arrow-anim">▼</span>
+        <div class="ad-container">
+            <a href="https://px.a8.net/svt/ejp?a8mat=4AZNCG+7K348I+59J2+62ENL" rel="nofollow">
+            <img border="0" width="300" height="250" alt="" src="https://www26.a8.net/svt/bgt?aid=260324080457&wid=001&eno=01&mid=s00000024563001019000&mc=1"></a>
+            <img border="0" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4AZNCG+7K348I+59J2+62ENL" alt="">
+        </div>
+    </div>
+
+    <div class="note">
+        ※初期設定代行の詳細は条件をご確認ください。セコムの駆けつけサービスには別途費用が発生する場合があります。
+    </div>
+
+    <footer>
+        <span class="footer-line1">※本ページはプロモーションを含みます。</span>
+        <span class="footer-line2">&copy; 2026 MANOMA 戦略的見守りガイド</span>
+    </footer>
+</div>
+</body>
+</html>
