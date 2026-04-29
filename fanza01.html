@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ANALYSIS REPORT - IMA STRATEGIC</title>
+    <style>
+        /* 1. 物理的制約：環境同期と横揺れ殺し */
+        :root {
+            --bg-dark: #121212;
+            --card-white: #ffffff;
+            --main-orange: #ff9800;
+            --point-red: #ff5252;
+            --stealth-text: #bbbbbb;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            background-color: var(--bg-dark);
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #333;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .lp-wrapper {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding-top: env(safe-area-inset-top);
+            background-color: var(--bg-dark);
+        }
+
+        /* 2. 見切れ根絶：全幅広告エリア */
+        .ad-row-full {
+            width: 100%;
+            background: #f9f9f9;
+            padding: 12px 0;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .ad-label-min {
+            font-size: 9px;
+            color: var(--stealth-text);
+            letter-spacing: 0.3em;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        /* 3. 人間工学：カード＆アクセント */
+        .logic-card {
+            background: var(--card-white);
+            margin: 20px 14px;
+            padding: 26px;
+            border-left: 8px solid var(--main-orange);
+            border-radius: 2px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        header h1 {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+            padding: 35px 10px;
+            font-weight: 900;
+            letter-spacing: 0.1em;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 18px;
+        }
+
+        /* 数値強調・ステルスリンク */
+        .val-highlight {
+            color: var(--point-red);
+            font-weight: bold;
+            text-decoration: none;
+            border-bottom: 2px solid var(--point-red);
+        }
+
+        /* 立体オレンジボタン */
+        .cta-btn-3d {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 22px;
+            background: linear-gradient(135deg, #ffb74d 0%, #f57c00 100%);
+            color: #fff !important;
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 4px;
+            box-shadow: 0 6px 0 #bf360c;
+            transition: 0.1s;
+        }
+
+        .cta-btn-3d:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #bf360c;
+        }
+
+        footer { padding: 60px 20px; text-align: center; color: #555; font-size: 10px; }
+    </style>
+</head>
+<body>
+<div class="lp-wrapper">
+    <header><h1>SYSTEM LOGIC 2.6</h1></header>
+
+    <div class="ad-row-full">
+        <span class="ad-label-min">ADVERTISEMENT</span>
+        </div>
+
+    <main>
+        <section class="logic-card">
+            <p>
+                「戦略的最適化の連鎖は、盤面の掌握へと至る。」<br>
+                蓄積された種銭を最大効率で運用するため、現在は<a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Djul00435&af_id=next31536-005&ch=toolbar_sp&ch_id=link" class="val-highlight">こちらの特設エリア</a>での最適化が推奨されています。
+            </p>
+        </section>
+
+        <div class="ad-row-full">
+            <span class="ad-label-min">ADVERTISEMENT</span>
+            </div>
+
+        <section class="logic-card">
+            <p>無駄なリスクを排し、盤面の完全掌握を継続してください。以下より最適化ルートの確定が可能です。</p>
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Djul00435&af_id=next31536-005&ch=toolbar_sp&ch_id=link" class="cta-btn-3d">最適化ルートを確定</a>
+        </section>
+    </main>
+
+    <div class="ad-row-full">
+        <span class="ad-label-min">ADVERTISEMENT</span>
+        </div>
+
+    <footer><p>OFFICIAL PROTOCOL BY IMA</p></footer>
+</div>
+</body>
+</html>
