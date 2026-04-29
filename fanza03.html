@@ -3,75 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>プレミアム・ドキュメント | 佐々倉ひより</title>
+    <title>プレミアム・ドキュメンタリー | 佐々倉ひより</title>
     <style>
-        /* 1. 物理的制約: 横揺れ殺し & OSバー回避 */
+        /* 1. 物理的制約: 横揺れ殺し & 表示同期 */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
             overflow-x: hidden;
-            background-color: #1a1a1a; /* ヘッダー色と同期 */
+            background-color: #1a1a1a; /* ヘッダー色と同期して白飛び封鎖 */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #333;
         }
 
         .lp-container {
             width: 100%;
             max-width: 500px;
             margin: 0 auto;
-            background-color: #f5f5f5;
+            background-color: #f8f9fa;
             min-height: 100vh;
-            padding-top: env(safe-area-inset-top);
+            padding-top: env(safe-area-inset-top); /* OSバー・ノッチ回避 */
             overflow-x: hidden;
         }
 
-        /* 2. ステルス広告戦略: 極小表記 & 全幅エリア */
-        .ad-outer-wrap {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            background: #fff;
-            text-align: center;
+        /* 2. ステルス広告戦略: 全幅広告エリア */
+        .ad-full-width {
+            width: 100%;
+            margin: 0;
             padding: 10px 0;
+            background-color: #fff;
+            text-align: center;
             border-top: 1px solid #eee;
             border-bottom: 1px solid #eee;
         }
 
         .ad-label {
+            display: block;
             font-size: 9px;
             color: #bbb;
-            letter-spacing: 0.15em;
-            margin-bottom: 4px;
-            display: block;
+            letter-spacing: 0.2em;
+            margin-bottom: 5px;
             text-transform: uppercase;
         }
 
         /* 3. 人間工学デザイン: カード & ボーダー */
         header {
             background-color: #1a1a1a;
-            color: #fff;
-            padding: 20px 15px;
+            color: #ffffff;
+            padding: 25px 15px;
             text-align: center;
         }
 
         .section-card {
-            background: #fff;
+            background: #ffffff;
             margin: 15px;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-left: 5px solid #ff3b30; /* メインカラーのアクセント */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-left: 6px solid #e63946; /* メインカラーアクセント */
         }
 
-        .highlight-price {
-            color: #c00;
-            font-size: 1.4rem;
+        .highlight-text {
+            color: #e63946;
             font-weight: bold;
-            background: linear-gradient(transparent 70%, #ffdfdf 70%);
+            background: linear-gradient(transparent 70%, #ffdee2 70%);
         }
 
         .cta-button {
@@ -80,30 +74,39 @@
             color: #fff;
             text-decoration: none;
             text-align: center;
-            padding: 18px;
+            padding: 20px;
             border-radius: 50px;
             font-weight: bold;
-            font-size: 1.1rem;
-            margin: 20px 0;
-            box-shadow: 0 4px 0 #e65100;
-            transition: transform 0.1s;
+            font-size: 1.2rem;
+            margin: 25px 0;
+            box-shadow: 0 5px 0 #e65100;
+            transition: 0.1s;
         }
 
         .cta-button:active {
-            transform: translateY(2px);
+            transform: translateY(3px);
             box-shadow: 0 2px 0 #e65100;
         }
 
-        img {
-            max-width: 100%;
+        .main-img {
+            width: 100%;
             height: auto;
             border-radius: 4px;
+            display: block;
+            margin-bottom: 15px;
         }
 
-        .info-text {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #444;
+        .price-tag {
+            color: #c00;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 15px;
+            font-size: 11px;
+            color: #999;
         }
     </style>
 </head>
@@ -111,55 +114,49 @@
 
 <div class="lp-container">
     <header>
-        <h1 style="margin:0; font-size: 1.2rem;">SPECIAL DOCUMENTARY</h1>
+        <h1 style="margin:0; font-size: 1.3rem; letter-spacing: 0.05em;">EXCLUSIVE DOCUMENTARY</h1>
     </header>
 
-    <div class="ad-outer-wrap">
+    <div class="ad-full-width">
         <span class="ad-label">ADVERTISEMENT</span>
-        <div style="min-height: 50px; display: flex; justify-content: center; align-items: center;">
-            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmida00492%2F&af_id=next31536-005&ch=special&ch_id=package_text" target="_blank">
-                <img src="https://pics.dmm.co.jp/digital/video/mida00492/mida00492pl.jpg" alt="佐々倉ひより">
-            </a>
-        </div>
+        <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
     </div>
 
     <main>
         <section class="section-card">
-            <h2 style="margin-top:0; font-size: 1.1rem;">現役女子大生、150日間の軌跡</h2>
-            <p class="info-text">
-                身長146センチ、21歳。日本で唯一の「研究サークル」に所属する彼女が、なぜ表現の世界を選んだのか。
-                一人の女子大生が覚悟を決めるまでのドキュメントがここに。
-            </p>
-            <div style="text-align: right; margin-top: 10px;">
-                販売価格：<span class="highlight-price">2,180円〜</span>
-            </div>
-        </section>
-
-        <div class="ad-outer-wrap">
-            <span class="ad-label">ADVERTISEMENT</span>
-            <p style="font-size: 12px; padding: 0 15px;">[ここに忍者AdMax等のタグを挿入]</p>
-        </div>
-
-        <section class="section-card">
-            <h2 style="margin-top:0; font-size: 1.1rem;">作品詳細情報</h2>
-            <ul class="info-text" style="padding-left: 20px;">
-                <li>出演：佐々倉ひより</li>
-                <li>密着期間：150日間</li>
-                <li>独占ドキュメンタリー収録</li>
-            </ul>
-            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmida00492%2F&af_id=next31536-005&ch=special&ch_id=package_text" class="cta-button">
-                公式ページで詳細を見る
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmida00492%2F&af_id=next31536-005&ch=special&ch_id=package_text" target="_blank" style="text-decoration:none; color:inherit;">
+                <img src="https://pics.dmm.co.jp/digital/video/mida00492/mida00492pl.jpg" alt="佐々倉ひより" class="main-img">
+                <h2 style="margin:0 0 10px 0; font-size: 1.2rem;">21歳、現役女子大生の覚悟。</h2>
+                <p style="font-size: 14px; line-height: 1.7; color: #444;">
+                    身長146センチ。友達1人。日本で唯一「エロ研究サークル」で活動する彼女、<span class="highlight-text">佐々倉ひより</span>。
+                    ‘ただのエロ好き’一般人がAVデビューするまでの150日間を克明に記録した、真実のドキュメンタリー。
+                </p>
             </a>
         </section>
 
-        <div class="ad-outer-wrap">
+        <div class="ad-full-width">
             <span class="ad-label">ADVERTISEMENT</span>
-            <p style="font-size: 12px; padding: 0 15px;">[ここに忍者AdMax等のタグを挿入]</p>
+            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        </div>
+
+        <section class="section-card">
+            <div style="text-align: center;">
+                <p style="margin:0; font-size: 13px; color: #666;">今すぐ視聴する</p>
+                <div class="price-tag">2,180円〜</div>
+            </div>
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmida00492%2F&af_id=next31536-005&ch=special&ch_id=package_text" class="cta-button">
+                作品をチェックする
+            </a>
+        </section>
+
+        <div class="ad-full-width">
+            <span class="ad-label">ADVERTISEMENT</span>
+            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
         </div>
     </main>
 
-    <footer style="text-align: center; padding: 30px 15px; font-size: 10px; color: #888;">
-        &copy; 2026 Digital Content Archive.
+    <footer>
+        <p>&copy; 2026 Special Content Archive. All rights reserved.</p>
     </footer>
 </div>
 
