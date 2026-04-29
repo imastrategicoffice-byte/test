@@ -7,7 +7,7 @@
     <style>
         /* 物理的見切れの根絶・背景同期 */
         html {
-            background-color: #004da1; /* ヘッダー最上部と同期 */
+            background-color: #004da1; 
             overflow-x: hidden;
         }
         body {
@@ -50,10 +50,17 @@
             line-break: strict;
         }
 
-        /* 忍者AdMax配置（戦略的黄金位置：最上部） */
-        .ad-slot-top {
+        /* ステルス・アド仕様：文字を最小化し、警戒心を解く */
+        .ad-slot {
             margin: 15px auto;
             text-align: center;
+        }
+        .ad-label {
+            font-size: 9px;
+            color: #bbb;
+            margin-bottom: 3px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         /* メインビジュアル代わりのキャッチ */
@@ -98,16 +105,6 @@
         ul {
             padding-left: 20px;
             margin: 10px 0;
-        }
-
-        /* 忍者AdMax配置（戦略的黄金位置：中間） */
-        .ad-slot-mid {
-            margin: 20px auto;
-            text-align: center;
-            padding: 10px;
-            background: #fff;
-            border-top: 1px solid #eee;
-            border-bottom: 1px solid #eee;
         }
 
         /* A8タグ・ボタン最適化 */
@@ -160,8 +157,8 @@
         <h1>あなたの楽曲を世界中に配信できる【narasu】</h1>
     </header>
 
-    <div class="ad-slot-top">
-        <p style="font-size:10px; color:#999; margin:0;">スポンサーリンク</p>
+    <div class="ad-slot">
+        <p class="ad-label">ADVERTISEMENT</p>
         <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
         </div>
 
@@ -180,8 +177,8 @@
         </ul>
     </div>
 
-    <div class="ad-slot-mid">
-        <p style="font-size:10px; color:#999; margin:0;">スポンサーリンク</p>
+    <div class="ad-slot">
+        <p class="ad-label">ADVERTISEMENT</p>
         <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
         </div>
 
@@ -208,7 +205,8 @@
 
     <footer>
         <p>音楽配信代行サービス narasu プロモーション</p>
-        <div class="ad-slot-bottom">
+        <div class="ad-slot">
+            <p class="ad-label">ADVERTISEMENT</p>
             <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
             </div>
     </footer>
