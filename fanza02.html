@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>特別限定オファー</title>
+    <style>
+        :root {
+            --main-color: #ff9800;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #e0e0e0;
+            --accent-red: #ff5252;
+            --ad-label: #bbb;
+        }
+
+        /* 1. 物理的制約：全域制御 */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* 2. OSバー回避とヘッダー同期 */
+        header {
+            background-color: var(--bg-color);
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: 15px;
+            text-align: center;
+            border-bottom: 1px solid #333;
+        }
+
+        .lp-container {
+            max-width: 500px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+
+        /* 3. 全幅広告エリア（見切れ根絶仕様） */
+        .full-width-ad {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: transparent;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .ad-label {
+            font-size: 9px;
+            color: var(--ad-label);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+            display: block;
+        }
+
+        /* 4. 人間工学セクションカード */
+        .section-card {
+            background: var(--card-bg);
+            margin: 20px 15px;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--main-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .highlight-price {
+            color: var(--accent-red);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* 立体感のあるボタン */
+        .cta-button {
+            display: block;
+            background: linear-gradient(to bottom, #ffb74d, var(--main-color));
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 18px;
+            margin: 25px 0;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 0 #e68900;
+            transition: all 0.2s;
+        }
+
+        .cta-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #e68900;
+        }
+
+        footer {
+            padding: 40px 15px env(safe-area-inset-bottom);
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>SPECIAL EDITION</h1>
+</header>
+
+<div class="lp-container">
+    
+    <div class="full-width-ad">
+        <span class="ad-label">ADVERTISEMENT</span>
+        <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmimk00267%2F&af_id=next31536-005&ch=special&ch_id=package_text" rel="sponsored" target="_blank">
+            <img src="https://pics.dmm.co.jp/digital/video/mimk00267/mimk00267pl.jpg" alt="Banner">
+        </a>
+    </div>
+
+    <main>
+        <section class="section-card">
+            <h2>シリーズ累計販売数800万部突破</h2>
+            <p>カラミざかり同窓会編 【MOODYZ創立25周年作品】</p>
+            <p style="margin-top:10px;">出演：石川澪</p>
+            <p style="margin-top:10px;">価格：<span class="highlight-price">2,180円〜</span></p>
+            
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmimk00267%2F&af_id=next31536-005&ch=special&ch_id=package_text" class="cta-button">今すぐ詳細をチェック</a>
+        </section>
+
+        <div class="full-width-ad">
+            <span class="ad-label">ADVERTISEMENT</span>
+            </div>
+
+        <section class="section-card">
+            <h2>作品の魅力</h2>
+            <p>圧倒的なクオリティで贈る、創立25周年を飾るに相応しい至高の逸品。同窓会というシチュエーションが織りなすドラマチックな展開をお見逃しなく。</p>
+        </section>
+    </main>
+
+    <div class="full-width-ad">
+        <span class="ad-label">ADVERTISEMENT</span>
+        </div>
+
+    <footer>
+        <p>&copy; 2026 Special Promotion. All Rights Reserved.</p>
+    </footer>
+</div>
+
+</body>
+</html>
