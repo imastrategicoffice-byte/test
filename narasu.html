@@ -6,162 +6,75 @@
     <title>narasu - 世界中へ音楽を配信</title>
     <style>
         /* 物理的見切れの根絶・背景同期 */
-        html {
-            background-color: #004da1; 
-            overflow-x: hidden;
-        }
+        html { background-color: #004da1; overflow-x: hidden; }
         body {
-            margin: 0;
-            padding: 0;
+            margin: 0; padding: 0;
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-            background-color: #f4f7f4;
-            color: #333;
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-text-size-adjust: 100%;
+            background-color: #f4f7f4; color: #333; line-height: 1.6;
+            overflow-x: hidden; -webkit-text-size-adjust: 100%;
         }
 
-        /* 横揺れ・見切れ防止コンテナ */
         .lp-container {
-            max-width: 500px;
-            margin: 0 auto;
-            background-color: #f4f7f4;
-            min-height: auto;
-            overflow-x: hidden;
-            position: relative;
+            max-width: 500px; margin: 0 auto;
+            background-color: #f4f7f4; min-height: auto;
+            overflow-x: hidden; position: relative;
         }
 
-        /* OSバー回避・ヘッダー */
         header {
-            background-color: #004da1;
-            color: #ffffff;
+            background-color: #004da1; color: #ffffff;
             padding: calc(20px + env(safe-area-inset-top)) 20px 30px;
-            text-align: center;
-            border-bottom-left-radius: 20px;
-            border-bottom-right-radius: 20px;
+            text-align: center; border-bottom-left-radius: 20px; border-bottom-right-radius: 20px;
         }
 
-        h1 {
-            font-size: 22px;
-            margin: 0;
-            font-weight: bold;
-            word-break: break-word;
-            overflow-wrap: anywhere;
-            line-break: strict;
-        }
+        h1 { font-size: 22px; margin: 0; font-weight: bold; word-break: break-word; }
 
-        /* --- 物理的見切れ根絶：ステルス・アド設定 --- */
+        /* --- 広告エリア：物理的見切れ根絶設定 --- */
         .ad-slot {
             margin: 15px auto;
             text-align: center;
-            max-width: 100%;
-            overflow: hidden;
+            width: 100%;
+            overflow: hidden; /* はみ出しを許さない */
             display: flex;
-            justify-content: center;
-            align-items: center;
             flex-direction: column;
+            align-items: center;
         }
 
-        /* 忍者AdMaxのiframe等、外部要素を親幅内に強制収容 */
-        .ad-slot > * {
+        /* 忍者AdMaxの要素を無理やり親幅に合わせるCSS */
+        .ad-slot iframe, .ad-slot ins, .ad-slot div {
             max-width: 100% !important;
+            box-sizing: border-box !important;
         }
 
         .ad-label {
-            font-size: 9px;
-            color: #bbb;
-            margin-bottom: 3px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            width: 100%;
-            text-align: center;
+            font-size: 9px; color: #bbb; margin-bottom: 3px;
+            letter-spacing: 1px; text-transform: uppercase;
         }
 
-        /* メインビジュアル代わりのキャッチ */
         .hero-box {
-            background: #ffffff;
-            margin: -20px 15px 20px;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            text-align: center;
+            background: #ffffff; margin: -20px 15px 20px; padding: 20px;
+            border-radius: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center;
         }
 
-        .highlight-red {
-            color: #d32f2f;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
+        .highlight-red { color: #d32f2f; font-weight: bold; font-size: 1.2em; }
 
-        /* カード形式セクション */
         .section-card {
-            background: #ffffff;
-            margin: 15px;
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 6px solid #004da1;
+            background: #ffffff; margin: 15px; padding: 20px;
+            border-radius: 10px; border-left: 6px solid #004da1;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        h2 {
-            font-size: 18px;
-            margin-top: 0;
-            color: #004da1;
-            word-break: break-word;
-        }
+        h2 { font-size: 18px; margin-top: 0; color: #004da1; }
 
-        p, li {
-            font-size: 15px;
-            word-break: break-word;
-            overflow-wrap: anywhere;
-        }
-
-        ul {
-            padding-left: 20px;
-            margin: 10px 0;
-        }
-
-        /* A8タグ・ボタン最適化 */
-        .cta-container {
-            text-align: center;
-            padding: 25px 15px;
-            background: #ffffff;
-            margin-top: 20px;
-        }
-
+        .cta-container { text-align: center; padding: 25px 15px; background: #ffffff; margin-top: 20px; }
         .cta-container a {
-            display: inline-block;
-            text-decoration: none;
-            background: #ff9800;
-            color: #fff;
-            padding: 15px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 18px;
+            display: inline-block; text-decoration: none; background: #ff9800; color: #fff;
+            padding: 15px 25px; border-radius: 50px; font-weight: bold; font-size: 18px;
             box-shadow: 0 4px 15px rgba(255,152,0,0.4);
-            transition: transform 0.2s;
         }
 
-        .cta-container a:active {
-            transform: scale(0.95);
-        }
-
-        .banner-box {
-            margin-top: 20px;
-        }
-
-        .banner-box img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 15px;
-            font-size: 12px;
-            color: #888;
-        }
+        .banner-box { margin-top: 20px; }
+        .banner-box img { max-width: 100%; height: auto; border-radius: 8px; }
+        footer { text-align: center; padding: 30px 15px; font-size: 12px; color: #888; }
     </style>
 </head>
 <body>
@@ -174,7 +87,7 @@
     <div class="ad-slot">
         <p class="ad-label">ADVERTISEMENT</p>
         <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
-        </div>
+    </div>
 
     <div class="hero-box">
         <p>全世界180ヵ国以上のストアへ楽曲を無制限配信！</p>
@@ -194,26 +107,19 @@
     <div class="ad-slot">
         <p class="ad-label">ADVERTISEMENT</p>
         <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
-        </div>
-
-    <div class="section-card">
-        <h2>圧倒的な料金メリット</h2>
-        <p>年間にアルバムを2枚以上配信するなら、他社よりもnarasuのサブスクプランが断然お得です。更新費用不要のプランなら、長期間の配信維持コストを大幅にカットできます。</p>
     </div>
 
     <div class="section-card">
-        <h2>YouTubeで収益化</h2>
-        <p>YouTubeマネタイズサービスに登録すれば、第三者があなたの曲を利用した際も、権利を守りながら収益を得ることが可能です。</p>
+        <h2>圧倒的な料金メリット</h2>
+        <p>年間にアルバムを2枚以上配信するなら、他社よりもnarasuのサブスクプランが断然お得です。</p>
     </div>
 
     <div class="cta-container">
         <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EI56B6+4VFA+60WN6" rel="nofollow">今すぐ楽曲配信を開始する</a>
         <div class="banner-box">
             <a href="https://px.a8.net/svt/ejp?a8mat=45593Y+EI56B6+4VFA+614CX" rel="nofollow">
-                <img src="https://www27.a8.net/svt/bgt?aid=250507870877&wid=001&eno=01&mid=s00000022735001013000&mc=1" alt="narasuバナー">
+                <img src="https://www27.a8.net/svt/bgt?aid=250507870877&wid=001&eno=01&mid=s00000022735001013000&mc=1" alt="narasu">
             </a>
-            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45593Y+EI56B6+4VFA+614CX" alt="">
-            <img border="0" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=45593Y+EI56B6+4VFA+60WN6" alt="">
         </div>
     </div>
 
@@ -222,9 +128,27 @@
         <div class="ad-slot">
             <p class="ad-label">ADVERTISEMENT</p>
             <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
-            </div>
+        </div>
     </footer>
 </div>
+
+<script>
+    window.addEventListener('load', function() {
+        const adSlots = document.querySelectorAll('.ad-slot');
+        adSlots.forEach(slot => {
+            const content = slot.querySelector('iframe, ins, div');
+            if (content) {
+                const containerWidth = slot.offsetWidth;
+                const contentWidth = content.offsetWidth;
+                if (contentWidth > containerWidth) {
+                    const scale = containerWidth / contentWidth;
+                    content.style.transform = 'scale(' + (scale * 0.98) + ')';
+                    content.style.transformOrigin = 'center top';
+                }
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
