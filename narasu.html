@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>narasu - 世界中へ音楽を配信</title>
     <style>
-        /* 物理的見切れの根絶・背景同期 */
         html { background-color: #004da1; overflow-x: hidden; }
         body {
             margin: 0; padding: 0;
@@ -28,26 +27,32 @@
 
         h1 { font-size: 22px; margin: 0; font-weight: bold; word-break: break-word; }
 
-        /* --- 広告エリア：物理的見切れ根絶設定 --- */
-        .ad-slot {
-            margin: 15px auto;
-            text-align: center;
+        /* --- 広告エリア：見切れを物理的に不可能にする設定 --- */
+        .ad-full-width {
             width: 100%;
-            overflow: hidden; /* はみ出しを許さない */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin: 15px 0;
+            padding: 0;
+            text-align: center;
+            display: block; /* 余計な干渉を防ぐ */
         }
 
-        /* 忍者AdMaxの要素を無理やり親幅に合わせるCSS */
-        .ad-slot iframe, .ad-slot ins, .ad-slot div {
-            max-width: 100% !important;
-            box-sizing: border-box !important;
+        .ad-slot {
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+            vertical-align: top;
         }
 
         .ad-label {
             font-size: 9px; color: #bbb; margin-bottom: 3px;
             letter-spacing: 1px; text-transform: uppercase;
+            display: block; text-align: center;
+        }
+
+        /* 忍者AdMaxの要素を無理やり制御 */
+        .ad-slot iframe {
+            max-width: 100vw !important;
+            margin: 0 auto !important;
         }
 
         .hero-box {
@@ -84,9 +89,11 @@
         <h1>あなたの楽曲を世界中に配信できる【narasu】</h1>
     </header>
 
-    <div class="ad-slot">
+    <div class="ad-full-width">
         <p class="ad-label">ADVERTISEMENT</p>
-        <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        <div class="ad-slot">
+            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        </div>
     </div>
 
     <div class="hero-box">
@@ -97,21 +104,22 @@
     <div class="section-card">
         <h2>narasuの選ばれる理由</h2>
         <ul>
-            <li>国内発サブスクプランは<span class="highlight-red">月額110円(税込)</span></li>
+            <li>国内発サブスクプランは月額110円(税込)</li>
             <li>リリース頻度が低い方向けの「1回払いきりプラン」も用意</li>
-            <li>ハイレゾ音源・YouTubeマネタイズ対応</li>
             <li>スマホ一つで配信申請が完結</li>
         </ul>
     </div>
 
-    <div class="ad-slot">
+    <div class="ad-full-width">
         <p class="ad-label">ADVERTISEMENT</p>
-        <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        <div class="ad-slot">
+            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        </div>
     </div>
 
     <div class="section-card">
         <h2>圧倒的な料金メリット</h2>
-        <p>年間にアルバムを2枚以上配信するなら、他社よりもnarasuのサブスクプランが断然お得です。</p>
+        <p>アルバムを2枚以上配信するなら、narasuのサブスクプランが断然お得です。長期間の維持コストも抑えられます。</p>
     </div>
 
     <div class="cta-container">
@@ -125,30 +133,14 @@
 
     <footer>
         <p>音楽配信代行サービス narasu プロモーション</p>
-        <div class="ad-slot">
+        <div class="ad-full-width">
             <p class="ad-label">ADVERTISEMENT</p>
-            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+            <div class="ad-slot">
+                <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+            </div>
         </div>
     </footer>
 </div>
-
-<script>
-    window.addEventListener('load', function() {
-        const adSlots = document.querySelectorAll('.ad-slot');
-        adSlots.forEach(slot => {
-            const content = slot.querySelector('iframe, ins, div');
-            if (content) {
-                const containerWidth = slot.offsetWidth;
-                const contentWidth = content.offsetWidth;
-                if (contentWidth > containerWidth) {
-                    const scale = containerWidth / contentWidth;
-                    content.style.transform = 'scale(' + (scale * 0.98) + ')';
-                    content.style.transformOrigin = 'center top';
-                }
-            }
-        });
-    });
-</script>
 
 </body>
 </html>
