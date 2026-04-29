@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>艶色シークレット | スペシャルコンテンツ</title>
+    <style>
+        /* 1. 物理的制約: 横揺れ殺し & 表示同期 & OSバー回避 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #1a1a1a; /* ヘッダーと同期 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+
+        .lp-container {
+            width: 100%;
+            max-width: 500px; /* 人間工学サイズ */
+            margin: 0 auto;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            padding-top: env(safe-area-inset-top); /* ノッチ回避 */
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 2. ステルス広告戦略: 全幅広告エリア（見切れ根絶） */
+        .ad-full-wrapper {
+            width: 100%;
+            margin: 0;
+            padding: 12px 0;
+            background-color: #ffffff;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .ad-label {
+            display: block;
+            font-size: 9px; /* 極小表記 */
+            color: #bbb; /* 薄いグレー */
+            letter-spacing: 0.25em; /* レターペース広め */
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+
+        /* 3. 人間工学デザイン: カード & ボーダー */
+        header {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .section-card {
+            background: #ffffff;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 6px solid #e63946; /* メインカラーアクセント */
+        }
+
+        .price-highlight {
+            color: #e63946; /* 赤系ハイライト */
+            font-size: 1.6rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .cta-button {
+            display: block;
+            background: linear-gradient(to bottom, #ff9800, #f57c00); /* 立体感オレンジ */
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 18px 10px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            box-shadow: 0 4px 0 #e65100;
+            transition: transform 0.1s;
+        }
+
+        .cta-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 1px 0 #e65100;
+        }
+
+        .content-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            font-size: 10px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<div class="lp-container">
+    <header>
+        <h1 style="margin:0; font-size: 1.2rem; letter-spacing: 0.1em;">PREMIUM SELECTION</h1>
+    </header>
+
+    <div class="ad-full-wrapper">
+        <span class="ad-label">ADVERTISEMENT</span>
+        <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+    </div>
+
+    <main>
+        <section class="section-card">
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6263758%2Fb915awnmg04244%2F&af_id=next31536-005&ch=special&ch_id=package_text" target="_blank" style="text-decoration:none; color:inherit;">
+                <img src="https://ebook-assets.dmm.co.jp/digital/e-book/b915awnmg04244/b915awnmg04244pl.jpg" alt="艶色シークレット" class="content-img">
+                <h2 style="margin:0 0 10px 0; font-size: 1.2rem;">艶色シークレット</h2>
+                <p class="description">
+                    【デジタル版限定おまけ付き】<br>
+                    繊細な描写と鮮やかな色彩で綴られる、究極のシークレット・ストーリー。
+                </p>
+                <div style="text-align: right;">
+                    <span class="price-highlight">1,430円</span>
+                </div>
+            </a>
+        </section>
+
+        <div class="ad-full-wrapper" style="background-color: transparent; border: none;">
+            <span class="ad-label">ADVERTISEMENT</span>
+            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        </div>
+
+        <section class="section-card">
+            <h3 style="margin-top:0; font-size: 1rem; color: #555;">限定特典付きで購入</h3>
+            <p class="description" style="font-size: 13px;">
+                デジタル版のみに収録された特別おまけコンテンツが付属。今すぐ公式ストアで詳細を確認できます。
+            </p>
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fbook.dmm.co.jp%2Fproduct%2F6263758%2Fb915awnmg04244%2F&af_id=next31536-005&ch=special&ch_id=package_text" class="cta-button">
+                公式ストアで今すぐ読む
+            </a>
+        </section>
+
+        <div class="ad-full-wrapper">
+            <span class="ad-label">ADVERTISEMENT</span>
+            <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Digital Content Selection.</p>
+    </footer>
+</div>
+
+</body>
+</html>
