@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>プレミアム・ドキュメント | 佐々倉ひより</title>
+    <style>
+        /* 1. 物理的制約: 横揺れ殺し & OSバー回避 */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+            background-color: #1a1a1a; /* ヘッダー色と同期 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333;
+        }
+
+        .lp-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            background-color: #f5f5f5;
+            min-height: 100vh;
+            padding-top: env(safe-area-inset-top);
+            overflow-x: hidden;
+        }
+
+        /* 2. ステルス広告戦略: 極小表記 & 全幅エリア */
+        .ad-outer-wrap {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background: #fff;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .ad-label {
+            font-size: 9px;
+            color: #bbb;
+            letter-spacing: 0.15em;
+            margin-bottom: 4px;
+            display: block;
+            text-transform: uppercase;
+        }
+
+        /* 3. 人間工学デザイン: カード & ボーダー */
+        header {
+            background-color: #1a1a1a;
+            color: #fff;
+            padding: 20px 15px;
+            text-align: center;
+        }
+
+        .section-card {
+            background: #fff;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-left: 5px solid #ff3b30; /* メインカラーのアクセント */
+        }
+
+        .highlight-price {
+            color: #c00;
+            font-size: 1.4rem;
+            font-weight: bold;
+            background: linear-gradient(transparent 70%, #ffdfdf 70%);
+        }
+
+        .cta-button {
+            display: block;
+            background: linear-gradient(to bottom, #ff9800, #f57c00);
+            color: #fff;
+            text-decoration: none;
+            text-align: center;
+            padding: 18px;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            box-shadow: 0 4px 0 #e65100;
+            transition: transform 0.1s;
+        }
+
+        .cta-button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #e65100;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        .info-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+<div class="lp-container">
+    <header>
+        <h1 style="margin:0; font-size: 1.2rem;">SPECIAL DOCUMENTARY</h1>
+    </header>
+
+    <div class="ad-outer-wrap">
+        <span class="ad-label">ADVERTISEMENT</span>
+        <div style="min-height: 50px; display: flex; justify-content: center; align-items: center;">
+            <a href="https://al.fanza.co.jp/?lurl=https%3A%2F%2Fvideo.dmm.co.jp%2Fav%2Fcontent%2F%3Fid%3Dmida00492%2F&af_id=next31536-005&ch=special&ch_id=package_text" target="_blank">
+                <img src="https://pics.dmm.co.jp/digital/video/mida00492/mida00492pl.jpg" alt="佐々倉ひより">
+            </a>
+        </div>
+    </div>
+
+    <main>
+        <section class="section-card">
+            <h2 style="margin-top:0; font-size: 1.1rem;">現役女子大生、150日間の軌跡</h2>
+            <p class="info-text">
+                身長146センチ、21歳。日本で唯一の「研究サークル」に所属する彼女が、なぜ表現の世界を選んだのか。
+                一人の女子
