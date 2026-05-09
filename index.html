@@ -10,7 +10,6 @@
             --bg-color: #0d0d0d;
         }
 
-        /* 画面全体の基本設定 */
         body {
             margin: 0;
             padding: 0;
@@ -18,10 +17,9 @@
             color: #ffffff;
             font-family: "Hiragino Mincho ProN", serif;
             text-align: center;
-            overflow-x: hidden; /* 横はみ出し防止 */
+            overflow-x: hidden;
         }
 
-        /* ヘッダーセクション */
         header {
             padding: 10vh 5% 5vh;
             display: flex;
@@ -30,13 +28,12 @@
         }
 
         .label {
-            font-size: clamp(0.7rem, 2vw, 1rem); /* スマホ〜PCで可変 */
+            font-size: clamp(0.7rem, 2vw, 1rem);
             letter-spacing: 0.5em;
             color: #d4af37;
             margin-bottom: 1rem;
         }
 
-        /* WIN5 一点突破：はみ出さないサイズ調整 */
         .main-title {
             font-size: clamp(2rem, 8vw, 4rem); 
             font-weight: 900;
@@ -45,10 +42,9 @@
             background: var(--gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            word-break: keep-all; /* 単語の途中での改行を防ぐ */
+            word-break: keep-all;
         }
 
-        /* サブタイトル：枠線と文字 */
         .motto-container {
             margin-top: 2rem;
             width: 90%;
@@ -62,10 +58,9 @@
             font-size: clamp(1rem, 4vw, 1.5rem);
             letter-spacing: 0.3em;
             margin: 0;
-            white-space: nowrap; /* 一行に収める */
+            white-space: nowrap;
         }
 
-        /* コンテンツセクション */
         section {
             width: 90%;
             max-width: 800px;
@@ -73,7 +68,7 @@
             padding: 2rem 5%;
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(212, 175, 55, 0.3);
-            box-sizing: border-box; /* パディングを含めたサイズ計算 */
+            box-sizing: border-box;
         }
 
         h2 {
@@ -83,7 +78,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* 金のボタン */
         .gold-btn {
             display: inline-block;
             margin-top: 1.5rem;
@@ -96,7 +90,6 @@
             transition: 0.3s;
         }
 
-        /* リスト：スマホでも崩れない */
         .archive-list {
             list-style: none;
             padding: 0;
@@ -117,7 +110,12 @@
             text-decoration: none;
         }
 
-        /* PC・タブレット向けの調整 */
+        /* 広告エリアの調整 */
+        .ad-container {
+            margin: 20px 0;
+            min-height: 100px;
+        }
+
         @media (min-width: 768px) {
             header { padding: 15vh 5% 10vh; }
             section { margin-bottom: 4rem; }
@@ -134,6 +132,13 @@
     </div>
 </header>
 
+<!-- ★広告エリア（上部）★ -->
+<div class="ad-container">
+    <!-- admax -->
+    <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+    <!-- admax -->
+</div>
+
 <section>
     <h2>最新予想</h2>
     <div id="today-content">
@@ -149,27 +154,39 @@
 </section>
 
 <script>
+// ==========================================
+// 【更新箇所】新しい予想を追加する時はここ！
+// ==========================================
 const raceData = [
+    // 1. 新しい日付を一番上に追加してください。
+    // 2. 日付、URL、タイトルを書き換えてください。
+    // 3. 行の最後に必ず「 , 」（カンマ）をつけてください。
     { date: "2026-05-09", url: "archive/2026/20260509.html", title: "2026年5月9日（土）" },
     { date: "2026-05-10", url: "archive/2026/0510.html", title: "2026年5月10日" }
 ];
-
+// ==========================================
 
 
 function updateDisplay() {
-    const today = new Date().toISOString().split('T')[0];
+    // 現在の日付を取得（日本時間ベース）
+    const now = new Date();
+    const jstDate = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+    const today = jstDate.toISOString().split('T')[0];
+    
     const todayContent = document.getElementById('today-content');
     const archiveList = document.getElementById('archive-list');
     let hasToday = false;
 
     raceData.forEach(item => {
         if (item.date === today) {
+            // 今日の日付と一致する場合「最新予想」に表示
             todayContent.innerHTML = `
                 <p style="font-size:1.4rem;">${item.title}</p>
                 <a href="${item.url}" class="gold-btn">予想を閲覧</a>
             `;
             hasToday = true;
         } else if (item.date < today) {
+            // 過去の日付は「過去ログ」に表示
             const li = document.createElement('li');
             li.innerHTML = `<span>${item.date}</span><a href="${item.url}">閲覧 ❯</a>`;
             archiveList.appendChild(li);
