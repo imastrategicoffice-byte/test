@@ -61,6 +61,23 @@
             white-space: nowrap;
         }
 
+        /* ★広告エリアの修正：はみ出し防止と中央寄せ★ */
+        .ad-container {
+            margin: 20px auto;
+            padding: 0 10px;
+            display: flex;
+            justify-content: center; /* 中央寄せ */
+            align-items: center;
+            overflow: hidden; /* はみ出しをカット */
+            max-width: 100%; /* 画面幅を超えない */
+        }
+
+        /* 広告の中身（iframe等）を強制的に画面内に収める */
+        .ad-container * {
+            max-width: 100% !important;
+            height: auto !important;
+        }
+
         section {
             width: 90%;
             max-width: 800px;
@@ -110,12 +127,6 @@
             text-decoration: none;
         }
 
-        /* 広告エリアの調整 */
-        .ad-container {
-            margin: 20px 0;
-            min-height: 100px;
-        }
-
         @media (min-width: 768px) {
             header { padding: 15vh 5% 10vh; }
             section { margin-bottom: 4rem; }
@@ -132,7 +143,7 @@
     </div>
 </header>
 
-<!-- ★広告エリア（上部）★ -->
+<!-- 広告エリア -->
 <div class="ad-container">
     <!-- admax -->
     <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
@@ -158,35 +169,25 @@
 // 【更新箇所】新しい予想を追加する時はここ！
 // ==========================================
 const raceData = [
-    // 1. 新しい日付を一番上に追加してください。
-    // 2. 日付、URL、タイトルを書き換えてください。
-    // 3. 行の最後に必ず「 , 」（カンマ）をつけてください。
     { date: "2026-05-09", url: "archive/2026/20260509.html", title: "2026年5月9日（土）" },
     { date: "2026-05-10", url: "archive/2026/0510.html", title: "2026年5月10日" }
 ];
 // ==========================================
 
-
 function updateDisplay() {
-    // 現在の日付を取得（日本時間ベース）
-    const now = new Date();
-    const jstDate = new Date(now.getTime() + (9 * 60 * 60 * 1000));
-    const today = jstDate.toISOString().split('T')[0];
-    
+    const today = new Date().toISOString().split('T')[0];
     const todayContent = document.getElementById('today-content');
     const archiveList = document.getElementById('archive-list');
     let hasToday = false;
 
     raceData.forEach(item => {
         if (item.date === today) {
-            // 今日の日付と一致する場合「最新予想」に表示
             todayContent.innerHTML = `
                 <p style="font-size:1.4rem;">${item.title}</p>
                 <a href="${item.url}" class="gold-btn">予想を閲覧</a>
             `;
             hasToday = true;
         } else if (item.date < today) {
-            // 過去の日付は「過去ログ」に表示
             const li = document.createElement('li');
             li.innerHTML = `<span>${item.date}</span><a href="${item.url}">閲覧 ❯</a>`;
             archiveList.appendChild(li);
