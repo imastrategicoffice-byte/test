@@ -3,74 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WIN5一点突破｜戦略的最適化</title>
+    <title>WIN5一点突破｜戦略的最適化の連鎖</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; background: #f4f4f4; }
-        section { background: #fff; padding: 20px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .today-box { border: 3px solid #e44d26; background: #fff5f2; }
+        :root {
+            --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f9f295 50%, #d4af37 100%);
+            --dark-bg: #0a0e14;
+            --premium-white: #f8f9fa;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--premium-white);
+            line-height: 1.8;
+        }
+
+        header {
+            padding: 60px 20px;
+            text-align: center;
+            background: var(--dark-bg);
+        }
+
+        /* 三段構成の高級表題 */
+        .main-title {
+            font-size: 1.2rem;
+            letter-spacing: 0.3em;
+            color: #d4af37;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .huge-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin: 0;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        .sub-title {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-top: 15px;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+            display: inline-block;
+            padding-top: 10px;
+        }
+
+        section {
+            max-width: 900px;
+            margin: 0 auto 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 4px;
+        }
+
+        .today-focus {
+            border: 2px solid #d4af37;
+            background: rgba(212, 175, 55, 0.05);
+            text-align: center;
+        }
+
+        .gold-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background: var(--gold-gradient);
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 2px;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .gold-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
         .archive-list { list-style: none; padding: 0; }
-        .archive-list li { border-bottom: 1px solid #ddd; padding: 10px 0; }
-        .btn { display: inline-block; background: #e44d26; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+        .archive-list li {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+        .archive-list a { color: #d4af37; text-decoration: none; }
     </style>
 </head>
 <body>
 
-<header style="text-align:center;">
-    <h1>WIN5一点突破プロジェクト</h1>
+<header>
+    <span class="main-title">STRATEGIC OPTIMIZATION</span>
+    <h1 class="huge-title">WIN5 一点突破<br>プロジェクト</h1>
+    <p class="sub-title">戦略的最適化の連鎖は、盤面の掌握へと至る。</p>
 </header>
 
-<!-- 【本日の予想エリア】 -->
-<section id="today-section" class="today-box">
-    <h2>本日の1点予想</h2>
+<section id="today-section" class="today-focus">
+    <h2 style="color:#d4af37;">THE LATEST PREDICTION</h2>
     <div id="today-content">
-        <!-- ここにJavaScriptで「今日のリンク」が自動表示されます -->
+        <!-- JSで自動挿入 -->
     </div>
 </section>
 
-<!-- 【過去ログエリア】 -->
 <section>
-    <h2>過去の的中実績・ログ</h2>
+    <h2 style="font-size: 1.2rem; border-left: 3px solid #d4af37; padding-left: 15px;">PAST ARCHIVES</h2>
     <ul id="archive-list" class="archive-list">
-        <!-- ここにJavaScriptで「過去になったリンク」が自動表示されます -->
+        <!-- JSで過去ログが並ぶ -->
     </ul>
 </section>
 
 <script>
-/**
- * 📝 ここに「日付」と「その日の予想ページURL」を書き足すだけ！
- * 未来の日付は「本日の予想」に、過ぎた日付は「過去ログ」に自動で入ります。
- */
+// 📝 ここにデータを追加するだけで自動仕分けされます
 const raceData = [
-    { date: "2026-05-10", url: "archive/2026/0510.html", title: "5月10日（日）の1点予想" },
-    { date: "2026-05-03", url: "archive/2026/0503.html", title: "5月3日（日）の1点予想" },
-    // 💡 次回分はここに一行追加するだけ！
+    { date: "2026-05-10", url: "archive/2026/0510.html", title: "MAY 10th - 至高の1点" },
+    { date: "2026-05-03", url: "archive/2026/0503.html", title: "MAY 3rd - 戦略的伏線" }
 ];
 
 function updateDisplay() {
-    const today = new Date().toISOString().split('T')[0]; // 今日の日付を取得
+    const today = new Date().toISOString().split('T')[0];
     const todayContent = document.getElementById('today-content');
     const archiveList = document.getElementById('archive-list');
-
     let hasToday = false;
 
     raceData.forEach(item => {
         if (item.date === today) {
-            // 今日の日付と一致する場合
-            todayContent.innerHTML = `<p>${item.title}</p><a href="${item.url}" class="btn">今すぐ予想画面を見る</a>`;
+            todayContent.innerHTML = `<p style="font-size:1.4rem;">${item.title}</p><a href="${item.url}" class="gold-btn">EXPECTATION VIEW</a>`;
             hasToday = true;
         } else if (item.date < today) {
-            // 過去の日付の場合
             const li = document.createElement('li');
-            li.innerHTML = `${item.date} ： <a href="${item.url}">${item.title}</a>`;
+            li.innerHTML = `<span>${item.date}</span><a href="${item.url}">${item.title} ❯</a>`;
             archiveList.appendChild(li);
         }
     });
 
     if (!hasToday) {
-        todayContent.innerHTML = "<p>本日のレース予定はありません。次回の更新をお楽しみに！</p>";
+        todayContent.innerHTML = "<p>NEXT RACE COMING SOON...</p>";
     }
 }
-
 updateDisplay();
 </script>
 
