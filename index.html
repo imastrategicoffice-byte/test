@@ -3,109 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WIN5一点突破</title>
+    <title>WIN5一点突破｜究極の掌握</title>
     <style>
         :root {
-            --gold-gradient: linear-gradient(135deg, #cfb53b 0%, #fff9aa 50%, #cfb53b 100%);
-            --bg-color: #0d0d0d;
+            --gold: linear-gradient(135deg, #b8860b 0%, #f7ef8a 50%, #b8860b 100%);
+            --bg-color: #050505;
         }
 
         body {
             margin: 0;
-            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+            font-family: "Hiragino Mincho ProN", "MS PMincho", serif;
             background-color: var(--bg-color);
-            color: #ffffff;
-            line-height: 1.8;
+            color: #f0f0f0;
             text-align: center;
         }
 
         header {
-            padding: 80px 20px;
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
+            padding: 60px 20px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .top-label {
-            font-size: 0.9rem;
-            letter-spacing: 0.5em;
-            color: #cfb53b;
-            margin-bottom: 15px;
-            display: block;
+        /* 月桂冠（金の葉っぱ）の装飾 */
+        .laurel-wreath {
+            display: inline-block;
+            position: relative;
+            padding: 0 100px;
         }
+        .laurel-wreath::before, .laurel-wreath::after {
+            content: "🌿"; /* 実際にはCSSの形状で表現 */
+            font-size: 5rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            filter: sepia(1) saturate(5) hue-rotate(10deg) brightness(1.2);
+            opacity: 0.8;
+        }
+        .laurel-wreath::before { content: "🍃"; left: 0; transform: translateY(-50%) scaleX(-1); }
+        .laurel-wreath::after { content: "🍃"; right: 0; }
+
+        .top-label {
+            font-size: 0.8rem;
+            letter-spacing: 0.6em;
+            color: #d4af37;
+            display: block;
+            margin-bottom: 20px;
+        }
+
         .main-title {
-            font-size: 2.8rem;
+            font-size: 3.5rem;
             font-weight: 900;
             margin: 0;
-            background: var(--gold-gradient);
+            background: var(--gold);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.4));
         }
-        .motto {
-            font-size: 1.2rem;
-            margin-top: 25px;
-            letter-spacing: 0.2em;
-            border-top: 1px solid rgba(207, 181, 59, 0.4);
+
+        .motto-box {
+            margin-top: 30px;
             display: inline-block;
-            padding: 15px 40px 0;
+            border-top: 1px solid #d4af37;
+            border-bottom: 1px solid #d4af37;
+            padding: 15px 60px;
+        }
+        .motto-text {
+            font-size: 1.5rem;
+            letter-spacing: 0.4em;
+            background: var(--gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0;
         }
 
         section {
-            max-width: 700px;
-            margin: 0 auto 60px;
+            max-width: 800px;
+            margin: 40px auto;
             padding: 40px;
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(207, 181, 59, 0.2);
+            background: rgba(10, 10, 10, 0.8);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            position: relative;
         }
 
-        .gold-button {
+        /* 四隅の葉っぱ装飾 */
+        section::before { content: "🍂"; position: absolute; top: -10px; left: -10px; font-size: 2rem; filter: brightness(1.5) sepia(1); }
+        section::after { content: "🍂"; position: absolute; bottom: -10px; right: -10px; font-size: 2rem; transform: rotate(180deg); filter: brightness(1.5) sepia(1); }
+
+        .gold-btn {
             display: inline-block;
-            margin-top: 25px;
-            padding: 20px 60px;
-            background: var(--gold-gradient);
+            margin-top: 30px;
+            padding: 20px 80px;
+            background: var(--gold);
             color: #000;
             text-decoration: none;
             font-weight: 900;
-            letter-spacing: 0.1em;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.6);
+            font-size: 1.2rem;
+            clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* 特徴的な形状 */
         }
 
-        .archive-list { list-style: none; padding: 0; margin-top: 30px; text-align: left; }
+        .archive-list { list-style: none; padding: 0; margin-top: 30px; }
         .archive-list li {
-            padding: 18px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 20px;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
-        .archive-list a { color: #cfb53b; text-decoration: none; font-weight: bold; }
+        .archive-list a { color: #d4af37; text-decoration: none; font-weight: bold; font-size: 1.1rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="top-label">PREMIUM STRATEGY</span>
-    <h1 class="main-title">WIN5 一点突破</h1>
-    <p class="motto">究極の一点突破を目指す</p>
+    <div class="laurel-wreath">
+        <span class="top-label">ULTIMATE STRATEGY</span>
+        <h1 class="main-title">WIN5 一点突破</h1>
+    </div>
+    <br>
+    <div class="motto-box">
+        <p class="motto-text">究極の一点突破を目指す</p>
+    </div>
 </header>
 
 <section>
-    <h2 style="color:#cfb53b; font-size: 1.4rem; letter-spacing: 0.2em;">最新予想</h2>
+    <h2 style="color:#d4af37; letter-spacing: 0.3em;">LATEST PREDICTION</h2>
     <div id="today-content">
         <!-- JSで自動挿入 -->
     </div>
 </section>
 
 <section>
-    <h2 style="font-size: 1rem; border-left: 4px solid #cfb53b; padding-left: 15px; text-align: left;">過去ログ</h2>
+    <h2 style="font-size: 1rem; color: #d4af37; text-align: left;">ARCHIVES</h2>
     <ul id="archive-list" class="archive-list">
         <!-- JSで自動挿入 -->
     </ul>
 </section>
 
 <script>
-/**
- * 📝 更新方法：
- * dateは必ず「YYYY-MM-DD」形式で。
- * titleは日付のみを入力してください。
- */
 const raceData = [
     { date: "2026-05-10", url: "archive/2026/0510.html", title: "2026年5月10日" },
     { date: "2026-05-03", url: "archive/2026/0503.html", title: "2026年5月03日" }
@@ -120,19 +154,19 @@ function updateDisplay() {
     raceData.forEach(item => {
         if (item.date === today) {
             todayContent.innerHTML = `
-                <p style="font-size:1.5rem; margin-bottom:15px;">${item.title}</p>
-                <a href="${item.url}" class="gold-button">予想閲覧</a>
+                <p style="font-size:1.8rem; letter-spacing: 0.1em;">${item.title}</p>
+                <a href="${item.url}" class="gold-btn">閲覧する</a>
             `;
             hasToday = true;
         } else if (item.date < today) {
             const li = document.createElement('li');
-            li.innerHTML = `<span>${item.date}</span><a href="${item.url}">閲覧 ❯</a>`;
+            li.innerHTML = `<span>${item.date}</span><a href="${item.url}">履歴を確認 ❯</a>`;
             archiveList.appendChild(li);
         }
     });
 
     if (!hasToday) {
-        todayContent.innerHTML = "<p style='color:#888;'>次回更新をお待ちください</p>";
+        todayContent.innerHTML = "<p style='color:#666;'>次回の聖戦をお待ちください</p>";
     }
 }
 updateDisplay();
