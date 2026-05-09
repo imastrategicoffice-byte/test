@@ -21,7 +21,7 @@
         }
 
         header {
-            padding: 10vh 5% 5vh;
+            padding: 8vh 5% 4vh;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -46,7 +46,7 @@
         }
 
         .motto-container {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
             width: 90%;
             max-width: 600px;
             border-top: 1px solid #d4af37;
@@ -55,27 +55,35 @@
         }
 
         .motto-text {
-            font-size: clamp(1rem, 4vw, 1.5rem);
-            letter-spacing: 0.3em;
+            font-size: clamp(0.9rem, 3.5vw, 1.3rem);
+            letter-spacing: 0.2em;
             margin: 0;
             white-space: nowrap;
         }
 
-        /* ★広告エリアの修正：はみ出し防止と中央寄せ★ */
+        /* ★超一流の広告最適化設定★ */
         .ad-container {
-            margin: 20px auto;
-            padding: 0 10px;
+            width: 100%;
+            margin: 20px 0;
+            overflow: hidden; /* はみ出しを完全に殺す */
             display: flex;
-            justify-content: center; /* 中央寄せ */
+            justify-content: center;
             align-items: center;
-            overflow: hidden; /* はみ出しをカット */
-            max-width: 100%; /* 画面幅を超えない */
         }
 
-        /* 広告の中身（iframe等）を強制的に画面内に収める */
-        .ad-container * {
-            max-width: 100% !important;
-            height: auto !important;
+        /* 広告の中身がスマホ幅を超えた場合、自動で縮小（Scale）させる */
+        .ad-inner {
+            display: inline-block;
+            max-width: 100%;
+            transform-origin: center top; /* 中央上部を起点に縮小 */
+        }
+
+        /* スマホ向け：広告が300px以上なら0.8倍に縮小して収める */
+        @media screen and (max-width: 480px) {
+            .ad-inner {
+                zoom: 0.9; /* ブラウザ標準の縮小 */
+                transform: scale(0.9); /* 古いブラウザ対応 */
+            }
         }
 
         section {
@@ -126,11 +134,6 @@
             color: #d4af37;
             text-decoration: none;
         }
-
-        @media (min-width: 768px) {
-            header { padding: 15vh 5% 10vh; }
-            section { margin-bottom: 4rem; }
-        }
     </style>
 </head>
 <body>
@@ -145,9 +148,11 @@
 
 <!-- 広告エリア -->
 <div class="ad-container">
-    <!-- admax -->
-    <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
-    <!-- admax -->
+    <div class="ad-inner">
+        <!-- admax -->
+        <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
+        <!-- admax -->
+    </div>
 </div>
 
 <section>
