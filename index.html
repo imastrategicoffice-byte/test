@@ -3,137 +3,112 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WIN5一点突破｜究極の掌握</title>
+    <title>WIN5一点突破</title>
     <style>
         :root {
-            /* 高級感のある配色：ゴールド・シルバー・ブラック */
             --gold-gradient: linear-gradient(135deg, #cfb53b 0%, #fff9aa 50%, #cfb53b 100%);
-            --silver-text: #e0e0e0;
-            --bg-color: #0d0d0d; /* 重厚感のある黒 */
+            --bg-color: #0d0d0d;
         }
 
         body {
             margin: 0;
             font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
             background-color: var(--bg-color);
-            color: var(--silver-text);
+            color: #ffffff;
             line-height: 1.8;
+            text-align: center;
         }
 
         header {
-            padding: 70px 20px;
-            text-align: center;
+            padding: 80px 20px;
             background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
         }
 
-        /* 三段構成の高級タイトル */
         .top-label {
-            font-size: 1rem;
-            letter-spacing: 0.4em;
+            font-size: 0.9rem;
+            letter-spacing: 0.5em;
             color: #cfb53b;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             display: block;
-            font-weight: bold;
         }
         .main-title {
-            font-size: 2.6rem;
+            font-size: 2.8rem;
             font-weight: 900;
             margin: 0;
             background: var(--gold-gradient);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* 人間工学に基づいた視認性アップの影 */
-            text-shadow: 0px 4px 10px rgba(207, 181, 59, 0.2);
         }
         .motto {
-            font-size: 1.1rem;
-            margin-top: 20px;
-            letter-spacing: 0.1em;
-            color: #ffffff;
+            font-size: 1.2rem;
+            margin-top: 25px;
+            letter-spacing: 0.2em;
             border-top: 1px solid rgba(207, 181, 59, 0.4);
             display: inline-block;
-            padding: 12px 30px 0;
+            padding: 15px 40px 0;
         }
 
         section {
-            max-width: 850px;
-            margin: 0 auto 50px;
+            max-width: 700px;
+            margin: 0 auto 60px;
             padding: 40px;
             background: rgba(255, 255, 255, 0.02);
-            border: 1px solid rgba(207, 181, 59, 0.15);
-            border-radius: 2px;
-        }
-
-        /* 今週の予想：注目を集めるエリア */
-        .today-prediction {
-            border: 1px solid #cfb53b;
-            background: linear-gradient(to bottom, rgba(207, 181, 59, 0.05), transparent);
-            text-align: center;
+            border: 1px solid rgba(207, 181, 59, 0.2);
         }
 
         .gold-button {
             display: inline-block;
-            margin-top: 20px;
-            padding: 18px 50px;
+            margin-top: 25px;
+            padding: 20px 60px;
             background: var(--gold-gradient);
             color: #000;
             text-decoration: none;
             font-weight: 900;
-            font-size: 1.1rem;
-            border-radius: 1px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-            transition: 0.3s ease;
+            letter-spacing: 0.1em;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.6);
         }
 
-        .gold-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(207, 181, 59, 0.3);
-        }
-
-        /* 過去ログ：シンプルで見やすいリスト */
-        .archive-list { list-style: none; padding: 0; margin-top: 20px; }
+        .archive-list { list-style: none; padding: 0; margin-top: 30px; text-align: left; }
         .archive-list li {
-            padding: 15px;
+            padding: 18px;
             border-bottom: 1px solid rgba(255,255,255,0.05);
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
-        .archive-list a { color: #cfb53b; text-decoration: none; font-size: 0.95rem; }
-        .archive-list a:hover { text-decoration: underline; }
+        .archive-list a { color: #cfb53b; text-decoration: none; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <header>
-    <span class="top-label">最高峰の戦略</span>
-    <h1 class="main-title">WIN5一点突破<br>プロジェクト</h1>
+    <span class="top-label">PREMIUM STRATEGY</span>
+    <h1 class="main-title">WIN5 一点突破</h1>
     <p class="motto">究極の一点突破を目指す</p>
 </header>
 
-<section class="today-prediction">
-    <h2 style="color:#cfb53b; font-size: 1.4rem;">【最新】本日の厳選予想</h2>
+<section>
+    <h2 style="color:#cfb53b; font-size: 1.4rem; letter-spacing: 0.2em;">最新予想</h2>
     <div id="today-content">
-        <!-- JavaScriptが自動で「本日の予想」をここに表示します -->
+        <!-- JSで自動挿入 -->
     </div>
 </section>
 
 <section>
-    <h2 style="font-size: 1.1rem; border-left: 4px solid #cfb53b; padding-left: 15px;">過去の的中実績・記録</h2>
+    <h2 style="font-size: 1rem; border-left: 4px solid #cfb53b; padding-left: 15px; text-align: left;">過去ログ</h2>
     <ul id="archive-list" class="archive-list">
-        <!-- 過去になったリンクが自動でここに並びます -->
+        <!-- JSで自動挿入 -->
     </ul>
 </section>
 
 <script>
 /**
  * 📝 更新方法：
- * 新しい予想を作ったら、以下の配列（raceData）の先頭に一行足すだけ。
- * 今日がその日付なら「最新予想」に、過ぎれば「過去ログ」に自動で移動します。
+ * dateは必ず「YYYY-MM-DD」形式で。
+ * titleは日付のみを入力してください。
  */
 const raceData = [
-    { date: "2026-05-10", url: "archive/2026/0510.html", title: "5月10日：究極の一点" },
-    { date: "2026-05-03", url: "archive/2026/0503.html", title: "5月3日：戦略の布石" }
+    { date: "2026-05-10", url: "archive/2026/0510.html", title: "2026年5月10日" },
+    { date: "2026-05-03", url: "archive/2026/0503.html", title: "2026年5月03日" }
 ];
 
 function updateDisplay() {
@@ -145,19 +120,19 @@ function updateDisplay() {
     raceData.forEach(item => {
         if (item.date === today) {
             todayContent.innerHTML = `
-                <p style="font-size:1.3rem; margin-bottom:10px;">${item.title}</p>
-                <a href="${item.url}" class="gold-button">予想を閲覧する</a>
+                <p style="font-size:1.5rem; margin-bottom:15px;">${item.title}</p>
+                <a href="${item.url}" class="gold-button">予想閲覧</a>
             `;
             hasToday = true;
         } else if (item.date < today) {
             const li = document.createElement('li');
-            li.innerHTML = `<span>${item.date}</span><a href="${item.url}">${item.title} ❯</a>`;
+            li.innerHTML = `<span>${item.date}</span><a href="${item.url}">閲覧 ❯</a>`;
             archiveList.appendChild(li);
         }
     });
 
     if (!hasToday) {
-        todayContent.innerHTML = "<p>次回の更新まで、今しばらくお待ちください。</p>";
+        todayContent.innerHTML = "<p style='color:#888;'>次回更新をお待ちください</p>";
     }
 }
 updateDisplay();
