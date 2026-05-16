@@ -146,27 +146,22 @@
     </div>
 </header>
 
-<!-- 広告エリア -->
 <div class="ad-container">
     <div class="ad-inner">
-        <!-- admax -->
         <script src="https://adm.shinobi.jp/s/5dc767c9d027b146f3fc3e5d1036a45d"></script>
-        <!-- admax -->
-    </div>
+        </div>
 </div>
 
 <section>
     <h2>最新予想</h2>
     <div id="today-content">
-        <!-- JSで自動挿入 -->
-    </div>
+        </div>
 </section>
 
 <section>
     <h2 style="text-align: left;">過去ログ</h2>
     <ul id="archive-list" class="archive-list">
-        <!-- JSで自動挿入 -->
-    </ul>
+        </ul>
 </section>
 
 <script>
@@ -176,15 +171,24 @@
 const raceData = [
     { date: "2026-05-16", url: "archive/2026/20260516.html", title: "2026年5月16日（土）" },
     { date: "2026-05-10", url: "archive/2026/20260510.html", title: "2026年5月10日（日）" },
-    { date: "2026-05-09", url: "archive/2026/20260509.html", title: "2026年5月9日（土）" },
-    
+    { date: "2026-05-09", url: "archive/2026/20260509.html", title: "2026年5月9日（土）" }
 ];
 // ==========================================
 
 function updateDisplay() {
-    const today = new Date().toISOString().split('T')[0];
+    // 確実に日本時間（JST）ベースで本日の方角を算出する戦略的修正
+    const now = new Date();
+    const jstOffset = 9 * 60 * 60 * 1000;
+    const jstTime = new Date(now.getTime() + jstOffset);
+    const today = jstTime.toISOString().split('T')[0];
+    
     const todayContent = document.getElementById('today-content');
     const archiveList = document.getElementById('archive-list');
+    
+    // 初期化（古い重複表示のクリア）
+    todayContent.innerHTML = "";
+    archiveList.innerHTML = "";
+    
     let hasToday = false;
 
     raceData.forEach(item => {
